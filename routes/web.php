@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [LandingPageController::class, 'index'])->name('index');
+
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', function () {
+    if (Auth::check()) {
+        return redirect()->route('index'); // Redirect to home page
+    } else {
+        return view('auth.login');
+    }
+})->name('login');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });

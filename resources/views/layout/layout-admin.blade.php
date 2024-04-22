@@ -50,7 +50,7 @@
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
-            @endif
+            {{-- @endif --}}
             @yield('content')
         </div>
         <!-- /.Content -->
