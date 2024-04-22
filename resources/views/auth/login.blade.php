@@ -37,8 +37,8 @@
                                 <span class="fas fa-user"></span>
                             </div>
                         </div>
-                        <input type="text" class="form-control" name="nama_pengguna" id="nama_pengguna"
-                            placeholder="Nama Pengguna">
+                        <input type="text" class="form-control" name="username" id="username"
+                            placeholder="username">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-append">

@@ -327,7 +327,7 @@
             }
         });
     </script>
-@endif
+{{-- @endif --}}
 
 
 {{-- <script>
