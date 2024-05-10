@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('pengguna', function (Blueprint $table) {
             $table->id();
-            $table->string('id_pengguna', 50)->unique();
-            $table->string('id_perusahaan')->unique();
-            $table->foreign('id_perusahaan')->references('id_perusahaan')->on('perusahaan');
+            $table->string('id_pengguna', 50);
             $table->string('nama_admin',50);
             $table->string('username',50);
             $table->string('password');

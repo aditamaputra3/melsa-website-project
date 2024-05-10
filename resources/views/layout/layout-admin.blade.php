@@ -21,20 +21,8 @@
         <!-- Content -->
         <div class="content-wrapper" style="min-height: 2171.31px;">
             {{-- @if (Request::is(
-                    'pemasok',
-                    'detail-kondisi',
-                    'kategori',
-                    'pengguna',
-                    'dosen',
-                    'matakuliah',
-                    'aslab',
-                    'dashboard',
-                    'praktikum',
-                    'jadwal',
-                    'pengajuan-jadwal',
-                    'profile-aslab',
-                    'bap',
-                    'mahasiswa')) --}}
+                    'admin'
+                    )) --}}
                 <section class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">
