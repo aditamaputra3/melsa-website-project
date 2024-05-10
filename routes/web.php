@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataAdminController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -32,10 +33,26 @@ Route::get('/login', function () {
 })->name('login');
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //route dibawah harus auth dulu buat masuk ke route tersebut
 Route::group(['middleware' => ['auth']], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('admin', DataAdminController::class);
+
+    Route::resource('kategori', KategoriController::class);
 });

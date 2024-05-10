@@ -1,7 +1,7 @@
 @extends('layout.layout-admin')
 
 @section('title')
-    {{ 'Data Admin' }}
+    {{ 'Data Kategori' }}
 @endsection
 
 @section('content')
@@ -18,25 +18,15 @@
                     <div class="modal-body">
                         <input type="hidden" name="id" id="id" class="form-control">
                         <div class="form-group">
-                            <label for="name">Nama Admin</label>
-                            <input type="text" name="nama_admin" id="nama_admin" class="form-control" autofocus>
-                            <span class="text-danger" id="error-nama_admin"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Username</label>
-                            <input type="text" name="username" id="username" class="form-control" autofocus>
-                            <span class="text-danger" id="error-username"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Password</label>
-                            <input type="password" name="password" id="password" class="form-control" autofocus>
-                            <span class="text-danger" id="error-password"></span>
+                            <label for="name">Nama Kategori</label>
+                            <input type="text" name="nama_kategori" id="nama_kategori" class="form-control" autofocus>
+                            <span class="text-danger" id="error-nama_kategori"></span>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sm btn-danger close-btn" data-dismiss="modal"><i
                                 class="fa fa-arrow-circle-left"></i> Cancel</button>
-                        <button type="submit" class="btn btn-sm btn-dark" id="saveBtn"><i class="fa fa-save"></i>
+                        <button type="submit" class="btn btn-sm btn-primary" id="saveBtn"><i class="fa fa-save"></i>
                             Save</button>
                     </div>
                 </div>
@@ -70,9 +60,8 @@
                                     <thead>
                                         <tr role="row">
                                             <th>#</th>
-                                            <th>Kode Admin</th>
-                                            <th>Nama Admin</th>
-                                            <th>Username</th>
+                                            <th>Kode Kategori</th>
+                                            <th>Nama Kategori</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -91,7 +80,7 @@
 
 @section('script')
     <script>
-        let routeUrl = "{{ route('admin.index') }}";
+        let routeUrl = "{{ route('kategori.index') }}";
 
         let columns = [{
                 data: 'DT_RowIndex',
@@ -99,16 +88,12 @@
                 orderable: true
             },
             {
-                data: 'id_pengguna',
-                name: 'id_pengguna',
+                data: 'id_kategori',
+                name: 'id_kategori',
             },
             {
-                data: 'nama_admin',
-                name: 'nama_admin',
-            },
-            {
-                data: 'username',
-                name: 'username',
+                data: 'nama_kategori',
+                name: 'nama_kategori',
             },
             {
                 data: 'aksi',
@@ -126,9 +111,7 @@
                 $('.modal-title').text('Edit Data');
                 $('#modal-form').modal('show');
                 $('#id').val(data.id);
-                $('#nama_admin').val(data.nama_admin);
-                $('#username').val(data.username);
-                $('#password').val("");
+                $('#nama_kategori').val(data.nama_kategori);
             })
         });
 
@@ -137,30 +120,17 @@
             $('#id').val('');
             $('.modal-title').text('Tambah Data');
             $('#modal-form form')[0].reset();
-            $('#modal-form [name=nama_admin').focus();
-            $('#modal-form [name=username').focus();
-            $('#modal-form [name=password').focus();
+            $('#modal-form [name=nama_kategori').focus();
         }
 
         function validation(data, isCreate) {
             let formIsValid = true;
             $('span[id^="error"]').text('');
-            if (!data.nama_admin) {
+            if (!data.nama_kategori) {
                 formIsValid = false;
-                $("#error-nama_admin").text('Nama admin wajib diisi.')
+                $("#error-nama_kategori").text('Nama kategori wajib diisi.')
             }
 
-            if (!data.username) {
-                formIsValid = false;
-                $("#error-username").text('Nama admin wajib diisi.')
-            }
-
-            if (!!isCreate) {
-                // if (!data.password) {
-                //   formIsValid = false;
-                //   $("#error-password").text('Sandi admin wajib diisi.')
-                // }
-            }
             return formIsValid;
         }
     </script>

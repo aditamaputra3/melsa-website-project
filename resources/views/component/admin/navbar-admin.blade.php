@@ -25,7 +25,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
 
-                <li class="user-header bg-warning">
+                <li class="user-header bg-danger">
                     <img src="/assets/img/user.jpg" class="img-circle elevation-2" alt="User Image">
                     <p>
                         {{ auth()->user()->nama_admin }}

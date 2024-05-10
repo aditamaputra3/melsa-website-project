@@ -31,5 +31,13 @@
     <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
 
     <link rel="manifest" href="/manifest.json">
+    <style>
+        .melsa-color {
+            color: #D90802 !important;
+        }
+
+        .bg-warna-kustom {
+            background-color: #D90802 !important;
+        }
+    </style>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-  
