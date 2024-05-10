@@ -68,7 +68,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{ url('/pengguna') }}" class="nav-link">
+                        <a href="{{ url('/admin') }}" class="nav-link">
                             <i class="nav-icon fas fa-user"></i>
                             <p>
                                 Data Admin

@@ -18,10 +18,9 @@ return new class extends Migration
             $table->decimal('harga_produk', 10, 2); // Kolom untuk harga dengan 2 angka di belakang koma
             $table->string('foto_produk');
             $table->text('deskripsi_produk');
-            $table->string('id_kategori', 50);
+            $table->string('id_kategori', 50)->unique();
             $table->foreign('id_kategori')->references('id_kategori')->on('kategori');
             $table->string('updatedby')->nullable();
-            $table->foreign('updatedby')->references('id_pengguna')->on('pengguna')->onDelete('set null');
             $table->timestamps();
         });
     }

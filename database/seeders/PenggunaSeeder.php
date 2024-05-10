@@ -15,7 +15,6 @@ class PenggunaSeeder extends Seeder
     {
         DB::table('pengguna')->insert([
             'id_pengguna' => 1,
-            'id_perusahaan' => 1,
             'nama_admin' => 'Adi',
             'username' => 'admin',
             'password' => bcrypt('123'), // Mengenkripsi password dengan Bcrypt
