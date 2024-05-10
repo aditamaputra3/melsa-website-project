@@ -3,7 +3,7 @@
 
 <head>
     <!-- head -->
-    @include('component.head-admin')
+    @include('component.admin.head-admin')
     {{-- @yield('head') --}}
     <!-- head -->
 </head>
@@ -11,11 +11,11 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- navbar -->
-        @include('component.navbar-admin')
+        @include('component.admin.navbar-admin')
         <!-- /.navbar -->
 
         <!-- sidebar -->
-        @include('component.sidebar')
+        @include('component.admin.sidebar')
         <!-- /.sidebar -->
 
         <!-- Content -->
@@ -44,7 +44,7 @@
         <!-- /.Content -->
 
         <!-- Footer -->
-        @include('component.footer-admin')
+        @include('component.admin.footer-admin')
         <!-- /.Footer -->
 
         <!-- Control Sidebar -->
@@ -55,7 +55,7 @@
     </div>
 
     <!-- Script -->
-    @include('component.script-admin')
+    @include('component.admin.script-admin')
     <!-- /.Script -->
     @yield('script')
 
