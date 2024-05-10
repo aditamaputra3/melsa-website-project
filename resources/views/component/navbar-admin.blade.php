@@ -21,15 +21,15 @@
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 <img src="/assets/img/user.jpg" class="user-image img-circle elevation-2" alt="User Image">
-                <span class="d-none d-md-inline"> {{ auth()->user()->nama_lengkap }}</span>
+                <span class="d-none d-md-inline"> {{ auth()->user()->nama_admin }}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
 
                 <li class="user-header bg-warning">
                     <img src="/assets/img/user.jpg" class="img-circle elevation-2" alt="User Image">
                     <p>
-                        {{ auth()->user()->nama_lengkap }}
-                        <small> {{ auth()->user()->peran_pengguna }}</small>
+                        {{ auth()->user()->nama_admin }}
+                        <small> Admin </small>
                     </p>
                 </li>
 
