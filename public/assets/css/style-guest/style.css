@@ -84,7 +84,8 @@
 }
 
 /* End Navbar */
-
+/* Home Style */
+/* Home Hero */
 .background-image {
     min-height: 100vh;
     background: url("/assets/img/guest/image-1.png") no-repeat;
@@ -95,15 +96,55 @@
 .backdrop {
     min-height: 100vh;
     background-color: var(--primary-1);
-    /* -webkit-backdrop-filter: opacity(59%);
-    backdrop-filter: opacity(59%); */
     opacity: 0.5;
     background-size: cover;
     background-position: center;
-    z-index: 10;
+    z-index: 1;
 }
-/* BREAKPOINTS */
+
+.hero-text {
+    color: var(--neutral-2);
+    font-weight: bolder;
+}
+/* End Home Hero */
+
+/* Home Content */
+.home-why-item {
+    width: 25%;
+    margin: 0 1rem;
+}
+.home-testimoni-card {
+    width: 25%;
+    padding: 2rem 1rem 0 1rem;
+    background-color: var(--neutral-3);
+    color: var(--neutral-2);
+    border-radius: 12px;
+}
+
+/* End Home Content */
+
+/* End Home Style */
+
+/* Button */
+.home-menu-button {
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    width: 10rem;
+    color: var(--neutral-1);
+    background-color: var(--neutral-2);
+    border: solid 2px var(--neutral-1);
+    border-radius: 20px;
+    &:hover {
+        background-color: var(--primary-1);
+        color: var(--neutral-2);
+        border: solid 2px var(--neutral-2);
+    }
+}
+/* End Button */
+
+/* Responsive */
 @media (max-width: 440px) {
+    /* Navbar Responsive */
     .header {
         padding: 0.5rem 1rem;
         background-color: var(--primary-1);
@@ -160,7 +201,7 @@
         transition-delay: calc(1 * var(--i));
     }
 
-    .dropdown{
+    .dropdown {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -168,4 +209,22 @@
     .dropdown:hover .dropdown-content {
         width: 100%;
     }
+    /* End Navbar Responsive */
+
+    /* Home Style */
+    /* Home Content Responsive */
+    .home-why-item {
+        width: 100%;
+    }
+    .home-testimoni-card {
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 2rem 1rem 0 1rem;
+        background-color: var(--neutral-3);
+        color: var(--neutral-2);
+        border-radius: 12px;
+    }
+    /* End Home Content Responsive */
+    /* End Home Style */
 }
+/* End Responsive */
