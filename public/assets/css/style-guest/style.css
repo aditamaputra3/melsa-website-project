@@ -1,0 +1,110 @@
+.background-image {
+    min-height: 100vh;
+    background: url("/assets/img/guest/image-1.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.backdrop {
+    min-height: 100vh;
+    background-color: #d9080296;
+    -webkit-backdrop-filter: opacity(59%);
+    backdrop-filter: opacity(59%);
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    font-size: 1.15rem;
+    color: #fff;
+    padding: 0 0;
+    text-decoration: underline;
+    width: max-content;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.icons {
+    /* position: absolute; */
+    margin: 0px;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* BREAKPOINTS */
+@media (max-width: 440px) {
+    .header {
+        padding: 0.5rem 1rem;
+        background-color: #d9080296;
+        display: flex;
+        justify-content: end;
+    }
+
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked ~ .icons #menu-icon {
+        display: none;
+    }
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked ~ .icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 76%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        backdrop-filter: opacity(100%);
+        transition: height 0.1s ease;
+        -webkit-transition: height ease .3s;
+    }
+
+    #check:checked ~ .navbar {
+        height: 10rem;
+    }
+
+    .navbar a {
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+        margin: 0;
+        opacity: 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: .3s ease;
+    }
+
+    #check:checked ~ .navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(1 * var(--i));
+    }
+}
