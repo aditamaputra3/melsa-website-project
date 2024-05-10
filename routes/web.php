@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
+Route::get("/MelsaDashboard", function () {
+    return view('layout.layout-guest');
+});
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/login', function () {
