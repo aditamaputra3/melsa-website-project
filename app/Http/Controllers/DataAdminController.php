@@ -48,7 +48,7 @@ class DataAdminController extends Controller
                 return response()->json(['error' => 'Username sudah terdaftar.'], 400);
             }
             User::create([
-                'id_pengguna' => $this->generateIdPengguna(),
+                'id_pengguna' => $this->idOtomatis(),
                 'nama_admin' => $request->nama_admin,
                 'username' => $request->username,
                 'password' => bcrypt($request->password),
@@ -59,15 +59,12 @@ class DataAdminController extends Controller
     }
 
 
-    private function generateIdPengguna()
+    private function idOtomatis()
     {
-        // Ambil jumlah pengguna dengan awalan "ADM"
         $count = User::where('id_pengguna', 'like', 'ADM%')->count();
 
-        // Increment jumlah pengguna dan format menjadi dua digit
         $nextNumber = sprintf('%02d', $count + 1);
 
-        // Gabungkan dengan awalan "ADM"
         return 'ADM' . $nextNumber;
     }
 
