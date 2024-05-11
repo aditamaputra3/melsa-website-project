@@ -58,7 +58,7 @@
                 border-radius: 10px 10px 10px 10px;
                 border: 2px 2px 2px 2px;
                 ">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Cari">
                             <button class="btn btn-outline-success" type="submit">Cari</button>
                         </form>
                     </div>
@@ -70,45 +70,53 @@
 
     <div class="container mt-5">
         <div class="row mt-3">
-            <div class="col-4">
-                <div class="card">
-                    <img src="/assets/img/guest/Cup Cake.jpg" class="card-img-thubmnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">20/04/24</p>
-                        <a href="#" class="btn btn-primary">Selengkapnya</a>
+            <div class="col-4 mb-4">
+                <a style="text-decoration: none; cursor: pointer; padding: 0" class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <div class="ratio ratio-4x3">
+                        <img src="/assets/img/guest/Kue Mocha.jpeg" class="card-img-thumbnail" alt="...">
                     </div>
-                </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Kue Mocha</h5>
+                        <p class="card-text">The point of using Lorem Ipsum is that it has a more</p>
+                        <h6 style="color:#8F0000; font-weight: bold">Rp. 50.000</h6>
+                    </div>
+                </a>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <img src="/assets/img/guest/Cup Cake.jpg" class="card-img-thubmnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">20/04/24</p>
-                        <a href="#" class="btn btn-primary">Selengkapnya</a>
+            <div class="col-4 mb-4">
+                <a style="text-decoration: none; cursor: pointer;" class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <div class="ratio ratio-4x3">
+                        <img src="/assets/img/guest/Cup Cake.jpg" class="card-img-thumbnail" alt="...">
                     </div>
-                </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Cup Cake</h5>
+                        <p class="card-text">The point of using Lorem Ipsum is that it has a more</p>
+                        <h6 style="color:#8F0000; font-weight: bold">Rp. 50.000</h6>
+                    </div>
+                </a>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <img src="/assets/img/guest/Cup Cake.jpg" class="card-img-thubmnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">20/04/24</p>
-                        <a href="#" class="btn btn-primary">Selengkapnya</a>
+            <div class="col-4 mb-4">
+                <a style="text-decoration: none; cursor: pointer;" class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <div class="ratio ratio-4x3">
+                        <img src="/assets/img/guest/Kue Mocha.jpeg" class="card-img-thumbnail" alt="...">
                     </div>
-                </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Kue Mocha</h5>
+                        <p class="card-text">The point of using Lorem Ipsum is that it has a more</p>
+                        <h6 style="color:#8F0000; font-weight: bold">Rp. 50.000</h6>
+                    </div>
+                </a>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <img src="/assets/img/guest/Cup Cake.jpg" class="card-img-thubmnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">20/04/24</p>
-                        <a href="#" class="btn btn-primary">Selengkapnya</a>
+            <div class="col-4 mb-4">
+                <a style="text-decoration: none; cursor: pointer;" class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <div class="ratio ratio-4x3">
+                        <img src="/assets/img/guest/Cup Cake.jpg" class="card-img-thumbnail" alt="...">
                     </div>
-                </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Cup Cake</h5>
+                        <p class="card-text">The point of using Lorem Ipsum is that it has a more</p>
+                        <h6 style="color:#8F0000; font-weight: bold">Rp. 50.000</h6>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
