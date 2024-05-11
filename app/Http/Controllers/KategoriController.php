@@ -38,7 +38,6 @@ class KategoriController extends Controller
             $data->save();
         } else {
             Kategori::create([
-                'id_kategori' => $this->generateIdKategori(),
                 'nama_kategori' => $request->nama_kategori,
             ]);
         }
@@ -47,17 +46,17 @@ class KategoriController extends Controller
     }
 
 
-    private function generateIdKategori()
-    {
-        // Ambil jumlah pengguna dengan awalan "ADM"
-        $count = Kategori::where('id_kategori', 'like', 'KTG%')->count();
+    // private function generateIdKategori()
+    // {
+    //     // Ambil jumlah pengguna dengan awalan "ADM"
+    //     $count = Kategori::where('id_kategori', 'like', 'KTG%')->count();
 
-        // Increment jumlah pengguna dan format menjadi dua digit
-        $nextNumber = sprintf('%02d', $count + 1);
+    //     // Increment jumlah pengguna dan format menjadi dua digit
+    //     $nextNumber = sprintf('%02d', $count + 1);
 
-        // Gabungkan dengan awalan "ADM"
-        return 'KTG' . $nextNumber;
-    }
+    //     // Gabungkan dengan awalan "ADM"
+    //     return 'KTG' . $nextNumber;
+    // }
 
 
     public function edit($id)

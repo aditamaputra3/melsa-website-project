@@ -26,7 +26,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sm btn-danger close-btn" data-dismiss="modal"><i
                                 class="fa fa-arrow-circle-left"></i> Cancel</button>
-                        <button type="submit" class="btn btn-sm btn-primary" id="saveBtn"><i class="fa fa-save"></i>
+                        <button type="submit" class="btn btn-sm btn-dark" id="saveBtn"><i class="fa fa-save"></i>
                             Save</button>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                                     <!-- Second div content (if any) -->
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                    <button type="button" onclick="addForm()" class="btn btn-warning">
+                                    <button type="button" onclick="addForm()" class="btn btn-dark">
                                         <i class="fa fa-plus"></i> Tambah Data
                                     </button>
                                     {{-- <a href="{{ route('admin.export') }}" class="btn btn-success">
