@@ -25,13 +25,13 @@
                 <button class="home-menu-button">Melsa Kue</button>
             </div>
             <div class="home-menu-list d-flex justify-content-center flex-wrap p-2">
-                <div class="home-menu-card p-5 m-2  w-25">1</div>
-                <div class="home-menu-card p-5 m-2  w-25">2</div>
-                <div class="home-menu-card p-5 m-2  w-25">3</div>
-                <div class="home-menu-card p-5 m-2  w-25">1</div>
-                <div class="home-menu-card p-5 m-2  w-25">2</div>
-                <div class="home-menu-card p-5 m-2  w-25">3</div>
-                <div class="home-menu-card p-5 m-2  w-25">1</div>
+                <div class="home-menu-card p-5 m-2 bg-danger w-25">1</div>
+                <div class="home-menu-card p-5 m-2 bg-danger w-25">2</div>
+                <div class="home-menu-card p-5 m-2 bg-danger w-25">3</div>
+                <div class="home-menu-card p-5 m-2 bg-danger w-25">1</div>
+                <div class="home-menu-card p-5 m-2 bg-danger w-25">2</div>
+                <div class="home-menu-card p-5 m-2 bg-danger w-25">3</div>
+                <div class="home-menu-card p-5 m-2 bg-danger w-25">1</div>
             </div>
         </div>
         <div class="home-content-why-container w-75  mb-4">
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="home-content-testimoni-container w-75 mb-4 ">
-            <div class="home-testimoni-title">
+            <div class="home-testimoni-title mb-4">
                 <h1 class="text-center">Testimoni Beberapa Pelanggan</h1>
                 <h6 class="text-center">Melsa Catering & Melsa Kue</h6>
             </div>
