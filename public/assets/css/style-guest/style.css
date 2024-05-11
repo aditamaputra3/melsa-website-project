@@ -67,6 +67,7 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 7px;
+    border: solid 1px var(--primary-2);
     z-index: 1;
 }
 
@@ -76,6 +77,20 @@
     padding: 0.5rem 1rem;
     text-decoration: none;
     display: block;
+}
+.dropdown-menu-catering{
+    border-bottom: solid 1px var(--primary-2);
+}
+
+.dropdown-menu-catering:hover {
+    background-color: var(--primary-2);
+    color: var(--neutral-2);
+    border-radius: 7px 7px 0 0;
+}
+.dropdown-menu-cake:hover {
+    background-color: var(--primary-2);
+    color: var(--neutral-2);
+    border-radius: 0 0 7px 7px;
 }
 
 /* Show the dropdown menu on hover */
@@ -137,7 +152,8 @@
     &:hover {
         background-color: var(--primary-1);
         color: var(--neutral-2);
-        border: solid 2px var(--neutral-2);
+        border: solid 2px var(--primary-1);
+        transition: linear 0.2s;
     }
 }
 /* End Button */

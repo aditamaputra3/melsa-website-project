@@ -22,6 +22,9 @@ Route::get('/', [LandingPageController::class, 'index'])->name('index');
 Route::get("/MelsaDashboard", function () {
     return view('view-guest.view-home');
 });
+Route::get("/MenuCake", function () {
+    return view('view-guest.view-menu-cake');
+});
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/login', function () {
     if (Auth::check()) {

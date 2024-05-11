@@ -5,12 +5,12 @@
         <i class='bx bx-x' id="close-icon"></i>
     </label>
     <nav class="navbar">
-        <a class="navbar-menu" style="--i:1">Home</a>
+        <a class="navbar-menu" style="--i:1" href="/MelsaDashboard">Home</a>
         <div class="dropdown" style="--i:2">
             <a class="navbar-menu drop-menu">Menu</a>
             <div class="dropdown-content">
-                <a href="">Catering</a>
-                <a href="">Cake</a>
+                <a class="dropdown-menu-catering" href="">Catering</a>
+                <a class="dropdown-menu-cake" href="">Cake</a>
             </div>
         </div>
         <a class="navbar-menu" style="--i:0">Tentang</a>
