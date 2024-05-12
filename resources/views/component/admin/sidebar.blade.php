@@ -39,24 +39,24 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Menu
+                                Produk
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ url('/jadwal') }}" class="nav-link">
+                                <a href="{{ route('produk.index', ['jenis_produk' => 'kue']) }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
-                                        Menu Melsa Kue
+                                        Produk Melsa Kue
                                     </p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a href="{{ url('/pengajuan-jadwal') }}" class="nav-link">
+                                <a href="{{ route('produk.index', ['jenis_produk' => 'catering']) }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
-                                        Menu Melsa Catering
+                                        Produk Melsa Catering
                                     </p>
                                 </a>
                             </li>

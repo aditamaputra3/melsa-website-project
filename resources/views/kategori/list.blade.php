@@ -60,7 +60,6 @@
                                     <thead>
                                         <tr role="row">
                                             <th>#</th>
-                                            <th>Kode Kategori</th>
                                             <th>Nama Kategori</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -86,10 +85,6 @@
                 data: 'DT_RowIndex',
                 searchable: false,
                 orderable: true
-            },
-            {
-                data: 'id_kategori',
-                name: 'id_kategori',
             },
             {
                 data: 'nama_kategori',

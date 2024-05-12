@@ -6,6 +6,7 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -58,4 +59,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin', DataAdminController::class);
 
     Route::resource('kategori', KategoriController::class);
+
+    Route::resource('produk', ProdukController::class)->except(['show']);
+   // routes/web.php
+   Route::get('/produk/{jenis_produk?}', [ProdukController::class, 'index'])->name('produk.index');
 });
