@@ -2,32 +2,45 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
-class DataAdminController extends Controller
+class ProdukController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $jenis_produk = null)
     {
-        $data = Produk::all();
+        $kategori = DB::table('kategori')
+            ->pluck('nama_kategori', 'id')
+            ->toArray();
+
         if ($request->ajax()) {
+            $data = Produk::with(['kategori'])
+                ->where('jenis_produk', $jenis_produk)
+                ->latest()
+                ->get();
+
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('aksi', function ($row) {
-                    $btn = '<a href="javascript:void(0)" data-id="' . $row->id_produk . '" class="edit btn btn-warning btn-sm editData"><i class="fa fa-edit"></i>&nbsp;Edit</a>';
+                    $btn = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-warning btn-sm editData"><i class="fa fa-edit"></i></a>';
 
-                    $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id_produk . '" class="btn btn-danger btn-sm deleteData" data-url="' . route('admin.store') . '"><i class="fa fa-trash"></i>&nbsp;Delete</a>';
+                    $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-danger btn-sm deleteData" data-url="' . route('produk.store') . '"><i class="fa fa-trash"></i></a>';
 
                     return $btn;
+                })
+                ->addColumn('nama_kategori', function ($row) {
+                    return $row->kategori->nama_kategori ?? '';
                 })
                 ->rawColumns(['aksi'])
                 ->make(true);
         }
 
-        return view('admin.list');
+        return view('produk.list', ["kategori" => $kategori, "jenis_produk" => $jenis_produk]);
     }
 
     public function store(Request $request)

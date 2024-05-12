@@ -16,9 +16,9 @@ class KategoriController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('aksi', function ($row) {
-                    $btn = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-warning btn-sm editData"><i class="fa fa-edit"></i>&nbsp;Edit</a>';
+                    $btn = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-warning btn-sm editData"><i class="fa fa-edit"></i></a>';
 
-                    $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-danger btn-sm deleteData" data-url="' . route('kategori.store') . '"><i class="fa fa-trash"></i>&nbsp;Delete</a>';
+                    $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-danger btn-sm deleteData" data-url="' . route('kategori.store') . '"><i class="fa fa-trash"></i></a>';
 
                     return $btn;
                 })

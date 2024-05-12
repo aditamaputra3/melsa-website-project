@@ -19,4 +19,9 @@ class Produk extends Model
         'jenis_produk',
         'updatedby',
     ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'id_kategori');
+    }
 }
