@@ -21,9 +21,14 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
-// Route::get("/MelsaDashboard", function () {
-//     return view('view-guest.view-home');
-// });
+
+Route::get("/MelsaDashboard", function () {
+    return view('view-guest.view-home');
+
+});
+Route::get("/MenuCatering", function () {
+    return view('view-guest.view-catering');
+});
 Route::get("/MenuCake", function () {
     return view('view-guest.view-menu-cake');
 });
