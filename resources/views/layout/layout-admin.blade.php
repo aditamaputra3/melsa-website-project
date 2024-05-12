@@ -3,7 +3,7 @@
 
 <head>
     <!-- head -->
-    @include('component.head-admin')
+    @include('component.admin.head-admin')
     {{-- @yield('head') --}}
     <!-- head -->
 </head>
@@ -11,30 +11,18 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- navbar -->
-        @include('component.navbar-admin')
+        @include('component.admin.navbar-admin')
         <!-- /.navbar -->
 
         <!-- sidebar -->
-        @include('component.sidebar')
+        @include('component.admin.sidebar')
         <!-- /.sidebar -->
 
         <!-- Content -->
         <div class="content-wrapper" style="min-height: 2171.31px;">
             {{-- @if (Request::is(
-                    'pemasok',
-                    'detail-kondisi',
-                    'kategori',
-                    'pengguna',
-                    'dosen',
-                    'matakuliah',
-                    'aslab',
-                    'dashboard',
-                    'praktikum',
-                    'jadwal',
-                    'pengajuan-jadwal',
-                    'profile-aslab',
-                    'bap',
-                    'mahasiswa')) --}}
+                    'admin'
+                    )) --}}
                 <section class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">
@@ -56,7 +44,7 @@
         <!-- /.Content -->
 
         <!-- Footer -->
-        @include('component.footer-admin')
+        @include('component.admin.footer-admin')
         <!-- /.Footer -->
 
         <!-- Control Sidebar -->
@@ -67,7 +55,7 @@
     </div>
 
     <!-- Script -->
-    @include('component.script-admin')
+    @include('component.admin.script-admin')
     <!-- /.Script -->
     @yield('script')
 

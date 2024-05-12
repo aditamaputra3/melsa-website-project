@@ -1,40 +1,29 @@
-.background-image {
-    min-height: 100vh;
-    background: url("/assets/img/guest/image-1.png") no-repeat;
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-}
-.backdrop {
-    min-height: 100vh;
-    background-color: #d9080296;
-    -webkit-backdrop-filter: opacity(59%);
-    backdrop-filter: opacity(59%);
-    background-size: cover;
-    background-position: center;
-    z-index: 10;
-}
+@import url(../../../_settings/_variabel.css);
+/* Navbar */
 .header {
     position: fixed;
+    position: absolute;
+    background-color: transparent;
     top: 0;
     left: 0;
     width: 100%;
     padding: 0.5rem 0;
-    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 1;
 }
 
 .navbar-menu {
+    position: relative;
     font-size: 1.15rem;
-    color: #fff;
+    color: var(--neutral-2);
     padding: 0 0;
     text-decoration: none;
     width: max-content;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
     &::after {
         content: "";
         position: absolute;
@@ -42,7 +31,7 @@
         bottom: -6px;
         width: 100%;
         height: 3px;
-        background: black;
+        background: var(--neutral-2);
         border-radius: 5px;
         transform-origin: right;
         transform: scaleX(0);
@@ -52,12 +41,15 @@
         transform-origin: left;
         transform: scaleX(1);
     }
+    &:hover {
+        color: var(--neutral-2);
+    }
 }
 .icons {
     /* position: absolute; */
     margin: 0px;
     font-size: 2.8rem;
-    color: #fff;
+    color: var(--neutral-2);
     cursor: pointer;
     display: none;
 }
@@ -65,65 +57,131 @@
 #check {
     display: none;
 }
+/* Navbar Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--neutral-2);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    border: solid 1px var(--primary-2);
+    z-index: 1;
+}
 
-/* BREAKPOINTS */
-@media (max-width: 440px) {
-    .header {
-        padding: 0.5rem 1rem;
-        background-color: #d9080296;
-        display: flex;
-        justify-content: end;
-    }
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: var(--primary-2);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-menu-catering {
+    border-bottom: solid 1px var(--primary-2);
+}
 
-    .icons {
-        display: inline-flex;
-    }
+.dropdown-menu-catering:hover {
+    background-color: var(--primary-2);
+    color: var(--neutral-2);
+    border-radius: 7px 7px 0 0;
+}
+.dropdown-menu-cake:hover {
+    background-color: var(--primary-2);
+    color: var(--neutral-2);
+    border-radius: 0 0 7px 7px;
+}
 
-    #check:checked ~ .icons #menu-icon {
-        display: none;
-    }
-    .icons #close-icon {
-        display: none;
-    }
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-    #check:checked ~ .icons #close-icon {
-        display: block;
-    }
+/* End Navbar */
+/* Home Style */
+/* Home Hero */
+.background-image {
+    min-height: 100vh;
+    background: url("/assets/img/guest/image-1.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.backdrop {
+    min-height: 100vh;
+    background-color: var(--primary-1);
+    opacity: 0.5;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
 
-    .navbar {
-        position: absolute;
-        top: 76%;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background-color: rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        backdrop-filter: opacity(100%);
-        transition: height 0.1s ease;
-        -webkit-transition: height ease 0.3s;
-    }
+.hero-text {
+    color: var(--neutral-2);
+    font-weight: bolder;
+}
+/* End Home Hero */
 
-    #check:checked ~ .navbar {
-        height: 10rem;
-    }
-
-    .navbar a {
-        display: block;
-        width: 100%;
-        font-size: 1rem;
-        margin: 0;
-        opacity: 0;
-        text-align: center;
-        transform: translateY(-50px);
-        transition: 0.3s ease;
-    }
-
-    #check:checked ~ .navbar a {
-        transform: translateY(0);
-        opacity: 1;
-        transition-delay: calc(1 * var(--i));
+/* Home Content */
+.home-menu-card {
+    border-radius: 8px;
+    border: solid 2px var(--neutral-1);
+    width: 20rem;
+    text-decoration: none;
+    color: var(--neutral-1);
+    cursor: pointer;
+    &:hover{
+        box-shadow: 5px 5px 5px var(--neutral-1) ;
+        transform: scale(1.01);
+        transition: transform 0.5s;
     }
 }
+
+.home-card-img img {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    border-bottom: solid 1px var(--neutral-1);
+}
+
+.home-menu-card-body{
+    padding: 0.5rem 1rem;
+}
+
+.home-why-item {
+    width: 25%;
+    margin: 0 1rem;
+}
+.home-testimoni-card {
+    width: 25%;
+    padding: 2rem 1rem 0 1rem;
+    background-color: var(--neutral-3);
+    color: var(--neutral-2);
+    border-radius: 12px;
+}
+
+/* End Home Content */
+
+/* End Home Style */
+
+/* Button */
+.home-menu-button {
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    width: 10rem;
+    color: var(--neutral-1);
+    background-color: var(--neutral-2);
+    border: solid 2px var(--neutral-1);
+    border-radius: 20px;
+}
+
+#home-catering:active {
+    background-color: var(--primary-2);
+}
+/* End Button */
 
 /* style-melsa catering-guest */
 .judul {
@@ -240,3 +298,93 @@
     background-color: red; /* Mengubah warna latar belakang saat hover */
     color: white; /* Mengubah warna teks saat hover */
 }
+
+/* end style-card-melsa kue-guest */
+
+/* Responsive */
+@media (max-width: 440px) {
+    /* Navbar Responsive */
+    .header {
+        padding: 0.5rem 1rem;
+        background-color: var(--primary-1);
+        display: flex;
+        justify-content: end;
+    }
+
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked ~ .icons #menu-icon {
+        display: none;
+    }
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked ~ .icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 76%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        backdrop-filter: opacity(100%);
+        transition: height 0.1s ease;
+        -webkit-transition: height ease 0.3s;
+    }
+
+    #check:checked ~ .navbar {
+        height: 10rem;
+    }
+
+    .navbar-menu {
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+        margin: 0;
+        opacity: 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: 0.3s ease;
+    }
+
+    #check:checked ~ .navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(1 * var(--i));
+    }
+
+    .dropdown {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .dropdown:hover .dropdown-content {
+        width: 100%;
+    }
+    /* End Navbar Responsive */
+
+    /* Home Style */
+    /* Home Content Responsive */
+    .home-why-item {
+        width: 100%;
+    }
+    .home-testimoni-card {
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 2rem 1rem 0 1rem;
+        background-color: var(--neutral-3);
+        color: var(--neutral-2);
+        border-radius: 12px;
+    }
+    /* End Home Content Responsive */
+    /* End Home Style */
+}
+
+/* End Responsive */

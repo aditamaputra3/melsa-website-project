@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengguna', function (Blueprint $table) {
-            $table->id();
-            $table->string('id_pengguna', 50);
-            $table->string('nama_admin',50);
-            $table->string('username',50);
-            $table->string('password');
-            $table->timestamps();
+        Schema::table('produk', function (Blueprint $table) {
+            // Hapus pembatasan unik pada kolom id_kategori
+            $table->dropForeign(['id_kategori']);
         });
     }
 
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tabel_pengguna');
+        //
     }
 };

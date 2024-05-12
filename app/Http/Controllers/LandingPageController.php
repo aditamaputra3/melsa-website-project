@@ -12,7 +12,7 @@ class LandingPageController extends Controller
         // $Pengajuan= PengajuanJadwal::where('status_pengajuan', '=', 'menunggu')->count();
         // $Koordinator = Dosen::count();
         
-        return view('landingpage.index');
+        return view('view-guest.view-home');
     
         // return view('dashboard.index', compact('Praktikum', 'Asisten', 'Pengajuan','Koordinator'));
         }
