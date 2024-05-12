@@ -20,6 +20,12 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
 Route::get("/MelsaDashboard", function () {
     return view('view-guest.view-home');
+
+});
+
+Route::get("/MenuCatering", function () {
+    return view('view-guest.view-catering');
+
 });
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -35,3 +41,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
+
+// Route::get('/view-kue', function () { return view('view-kue');});

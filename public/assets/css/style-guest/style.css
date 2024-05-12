@@ -124,3 +124,119 @@
         transition-delay: calc(1 * var(--i));
     }
 }
+
+/* style-melsa catering-guest */
+.judul {
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 40px;
+    color: #8F0000;
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 50px;
+
+  }
+
+  .btn.dropdown-toggle {
+    text-align: left;
+    background-color: transparent; /* Menghilangkan warna latar belakang */
+    border-color: #A3A3A3; 
+    color: #575757;
+    border-width: 2px;
+    margin-bottom: 50px;
+    width: 350px;
+}
+
+
+.custom-row {
+    /* display: inline-block; */
+    /* margin-right: 5px; */
+    margin-right: -10px;
+}
+
+.melsacatering {
+    justify-content: space-between; 
+    align-items: center; /* Menempatkan item di tengah secara vertikal */
+    padding: 70px; /* Menambahkan padding */
+}
+
+/* style-card-melsa kue-guest */
+.card-container {
+    width: 100%;
+    /* margin-right: 15px; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 4em;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    display: grid;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(131, 130, 130, 0.2);
+    overflow: hidden;
+    /* Mengatur overflow agar gambar tidak melebihi batas card */
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em;
+    background-color: white;
+    /* Menambahkan latar belakang semi-transparan untuk judul dan teks */
+}
+
+.card-title {
+    font-weight: medium;
+    color: black;
+}
+
+.card-text {
+    color: black;
+    text-align: justify;
+    margin: 0.8em 0 1em 0;
+}
+
+.card-price {
+    color: #8F0000;
+    text-align: justify;
+    margin: 0.8em 0 1em 0;
+    font-weight: bold;
+}
+
+.number-row {
+    display: flex;
+    justify-content: space-between;
+    /* Distribute squares evenly */
+    width: fit-content;
+    /* Adjust width as needed */
+    margin: 0 auto;
+    /* Center the row horizontally */
+    gap: 15px;
+    font-family: Roboto, sans-serif;
+}
+
+.number-square {
+    width: 35px;
+    height: 40px;
+    background-color: transparent;
+    /* Mengatur latar belakang menjadi transparan */
+    color: red;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 10px;    /* Menghapus border */
+    outline: 2px solid red;/* Menambahkan outline merah */
+    display: flex;
+    justify-content: center; /* Center the number horizontally */
+    align-items: center;
+}
+
+.number-square:hover {
+    background-color: red; /* Mengubah warna latar belakang saat hover */
+    color: white; /* Mengubah warna teks saat hover */
+}
