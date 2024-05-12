@@ -14,6 +14,15 @@ class ProdukController extends Controller
 {
     public function index(Request $request, $jenis_produk = null)
     {
+        if ($jenis_produk === null) {
+    
+            return redirect()->route('dashboard');
+
+            // return view('errors.404');
+
+            // return response()->view('errors.404', [], 404);
+        }
+
         $kategori = DB::table('kategori')
             ->pluck('nama_kategori', 'id')
             ->toArray();
