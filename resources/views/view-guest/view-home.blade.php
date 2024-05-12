@@ -1,4 +1,4 @@
-@extends('layout.layout-guest')
+@extends('layout.layout-home-guest')
 
 @section('content')
     <div class="background-image mb-5">
@@ -19,22 +19,65 @@
                 ducimus blanditiis, iure
                 saepe pariatur ipsum dolor nostrum cupiditate, mollitia quaerat atque quas sint odio rem.</p>
         </div>
-        <div class="home-menu-container mb-4 w-75 ">
+        <div class="home-menu-container mb-4 w-100 my-4">
             <div class="home-menu-button-container d-flex justify-content-center">
-                <button class="home-menu-button">Melsa Catering</button>
-                <button class="home-menu-button">Melsa Kue</button>
+                <button class="home-menu-button catering-btn">Melsa Catering</button>
+                <button class="home-menu-button cake-btn">Melsa Kue</button>
             </div>
             <div class="home-menu-list d-flex justify-content-center flex-wrap p-2">
-                <div class="home-menu-card p-5 m-2 bg-danger w-25">1</div>
-                <div class="home-menu-card p-5 m-2 bg-danger w-25">2</div>
-                <div class="home-menu-card p-5 m-2 bg-danger w-25">3</div>
-                <div class="home-menu-card p-5 m-2 bg-danger w-25">1</div>
-                <div class="home-menu-card p-5 m-2 bg-danger w-25">2</div>
-                <div class="home-menu-card p-5 m-2 bg-danger w-25">3</div>
-                <div class="home-menu-card p-5 m-2 bg-danger w-25">1</div>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/Catering 1.png" alt="">
+                    </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </a>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/Catering 1.png" alt="">
+                    </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </a>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/Catering 1.png" alt="">
+                    </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </a>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/Catering 1.png" alt="">
+                    </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </a>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/Catering 1.png" alt="">
+                    </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </a>
             </div>
         </div>
-        <div class="home-content-why-container w-75  mb-4">
+        <div class="home-content-why-container w-100 mb-4 py-4">
             <h1 class="text-center mx-4">Kenapa Harus Memilih Melsa?</h1>
             <div class="d-flex justify-content-between flex-wrap p-2">
                 <div class=" px-3 text-center home-why-item">
@@ -54,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class="home-content-testimoni-container w-75 mb-4 ">
+        <div class="home-content-testimoni-container w-100 mb-4 px-4">
             <div class="home-testimoni-title mb-4">
                 <h1 class="text-center">Testimoni Beberapa Pelanggan</h1>
                 <h6 class="text-center">Melsa Catering & Melsa Kue</h6>

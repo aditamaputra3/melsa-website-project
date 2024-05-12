@@ -1,17 +1,17 @@
 @import url(../../../_settings/_variabel.css);
 /* Navbar */
 .header {
-    /* position: fixed; */
+    position: fixed;
     position: absolute;
+    background-color: transparent;
     top: 0;
     left: 0;
     width: 100%;
     padding: 0.5rem 0;
-    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 1;
 }
 
 .navbar-menu {
@@ -40,6 +40,9 @@
     &:hover::after {
         transform-origin: left;
         transform: scaleX(1);
+    }
+    &:hover {
+        color: var(--neutral-2);
     }
 }
 .icons {
@@ -78,7 +81,7 @@
     text-decoration: none;
     display: block;
 }
-.dropdown-menu-catering{
+.dropdown-menu-catering {
     border-bottom: solid 1px var(--primary-2);
 }
 
@@ -124,6 +127,30 @@
 /* End Home Hero */
 
 /* Home Content */
+.home-menu-card {
+    border-radius: 8px;
+    border: solid 2px var(--neutral-1);
+    width: 20rem;
+    text-decoration: none;
+    color: var(--neutral-1);
+    cursor: pointer;
+    &:hover{
+        box-shadow: 5px 5px 5px var(--neutral-1) ;
+        transform: scale(1.01);
+        transition: transform 0.5s;
+    }
+}
+
+.home-card-img img {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    border-bottom: solid 1px var(--neutral-1);
+}
+
+.home-menu-card-body{
+    padding: 0.5rem 1rem;
+}
+
 .home-why-item {
     width: 25%;
     margin: 0 1rem;
@@ -149,12 +176,10 @@
     background-color: var(--neutral-2);
     border: solid 2px var(--neutral-1);
     border-radius: 20px;
-    &:hover {
-        background-color: var(--primary-1);
-        color: var(--neutral-2);
-        border: solid 2px var(--primary-1);
-        transition: linear 0.2s;
-    }
+}
+
+#home-catering:active {
+    background-color: var(--primary-2);
 }
 /* End Button */
 

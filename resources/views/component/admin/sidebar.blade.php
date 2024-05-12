@@ -6,9 +6,9 @@
         <span class="brand-text font-weight-medium">Melsa</span>
     </a> --}}
 
-    <a href="{{url('/')}}" class="brand-link logo-switch">
-        <img src="/assets/melsalogo1.png" alt="AdminLTE Docs Logo Small" class="brand-image-xl logo-xs">
-        <img src="/assets/melsalogo1.png" alt="AdminLTE Docs Logo Large" class="brand-image-xl logo-xl" style="left: 50px;">
+    <a href="{{url('/')}}" class="brand-link logo-switch bg-white">
+        <img src="/assets/melsalogo3.png" alt="AdminLTE Docs Logo Small" class="brand-image-xs logo-xs" style="left: 0px;">
+        <img src="/assets/melsalogo2.png" alt="AdminLTE Docs Logo Large" class="brand-image-xl logo-xl" style="left: 50px;">
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
