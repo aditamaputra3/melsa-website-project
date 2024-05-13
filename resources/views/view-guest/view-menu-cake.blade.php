@@ -1,14 +1,11 @@
 @extends('layout.layout-guest')
 
 @section('content')
-    <h1 
-    style="text-align: center;
-    margin-top: 40px;
-    color: #8F0000;
-    font-family: Roboto;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 46.88px;">Melsa Kue</h1>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+        </script>
+
+    <div class="judul"> Melsa Kue</div>
 
     <div class="container">
         <div class="row mt-5">
