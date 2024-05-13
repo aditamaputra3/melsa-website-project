@@ -10,24 +10,23 @@ class DataAdminController extends Controller
 {
     public function index(Request $request)
     {
+        $melsared1Style = 'background-color: #D90802 !important; color: #FFFFFF !important;';
         $data = User::all();
+    
         if ($request->ajax()) {
             return Datatables::of($data)
                 ->addIndexColumn()
-                ->addColumn('aksi', function ($row) {
+                ->addColumn('aksi', function ($row) use ($melsared1Style) {
                     $btn = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-warning btn-sm editData"><i class="fa fa-edit"></i></a>';
-
-                    $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-danger btn-sm deleteData" data-url="' . route('admin.store') . '"><i class="fa fa-trash"></i></a>';
-
+                    $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-sm deleteData" style="' . $melsared1Style . '" data-url="' . route('admin.store') . '"><i class="fa fa-trash"></i></a>';
                     return $btn;
                 })
                 ->rawColumns(['aksi'])
                 ->make(true);
         }
-
-        return view('admin.list');
+    
+        return view('admin.list', compact('melsared1Style'));
     }
-
     public function store(Request $request)
     {
         if (!empty($request->id)) {

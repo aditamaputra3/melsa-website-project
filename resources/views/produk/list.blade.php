@@ -82,14 +82,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="card card-outline card-danger">
+                <div class="card card-outline card-dark">
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-4">
                             <div class="d-flex justify-content-start" id="print">
                                 <!-- Second div content (if any) -->
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button type="button" onclick="addForm()" class="btn btn-dark">
+                                <button type="button" onclick="addForm()" class="btn melsagray">
                                     <i class="fa fa-plus"></i> Tambah Data
                                 </button>
                                 {{-- <a href="{{ route('produk.export') }}" class="btn btn-success">

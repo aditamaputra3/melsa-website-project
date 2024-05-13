@@ -34,9 +34,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-danger close-btn" data-dismiss="modal"><i
+                        <button type="button" class="btn btn-sm melsared1 close-btn" data-dismiss="modal"><i
                                 class="fa fa-arrow-circle-left"></i> Cancel</button>
-                        <button type="submit" class="btn btn-sm btn-dark" id="saveBtn"><i class="fa fa-save"></i>
+                        <button type="submit" class="btn btn-sm melsagray" id="saveBtn"><i class="fa fa-save"></i>
                             Save</button>
                     </div>
                 </div>
@@ -48,17 +48,17 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card card-outline card-danger">
+                    <div class="card card-outline card-dark">
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-4">
                                 <div class="d-flex justify-content-start" id="print">
                                     <!-- Second div content (if any) -->
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                    <button type="button" onclick="addForm()" class="btn btn-warning">
+                                    <button type="button" onclick="addForm()" class="btn melsagray">
                                         <i class="fa fa-plus"></i> Tambah Data
                                     </button>
-                                    {{-- <a href="{{ route('admin.export') }}" class="btn btn-success">
+                                    {{-- <a href="{{ route('admin.export') }}" class="btn btn- cess">
                                         <i class="fa fa-download"></i> Export
                                     </a> --}}
                                     

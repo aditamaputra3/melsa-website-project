@@ -5,79 +5,73 @@
 @endsection
 
 @section('content')
-
-          <!-- Main content -->
-          <section class="content">
-              <div class="container-fluid">
-                
-                  <!-- Small boxes (Stat box) -->
-                  <div class="row">
-                      <div class="col-lg-3 col-6">
-                          <!-- small box -->
-                          <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>40</h3>
-                                <p>Produk</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-clipboard"></i>
-                            </div>
-                            <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box melsared1">
+                        <div class="inner">
+                            <h3>{{ $ProdukKue }}</h3>
+                            <p>Produk Melsa Kue</p>
                         </div>
-
-                          
-                      </div>
-                      <!-- ./col -->
-                      <div class="col-lg-3 col-6">
-                          <!-- small box -->
-                          <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>9</h3>
-                                <p>Kategori</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-ios-albums"></i>
-                            </div>
-                            <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <div class="icon">
+                            <i class="ion ion-clipboard"></i>
                         </div>
+                        <a href="{{ route('produk.index', ['jenis_produk' => 'kue']) }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
 
-                          
-                      </div>
-                      <!-- ./col -->
-                      <div class="col-lg-3 col-6">
-                          <!-- small box -->
-                          <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>5</h3>
-                                <p>Admin</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-android-people"></i>
-                            </div>
-                            <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box melsagray">
+                        <div class="inner">
+                            <h3>{{ $ProdukCatering }}</h3>
+                            <p>Produk Melsa Catering</p>
                         </div>
-                      </div>
-                      <!-- ./col -->
-                      {{-- <div class="col-lg-3 col-6">
-                          <!-- small box -->
-                          <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3>{{$Koordinator}}</h3>
-                                <p>Koordinator</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-briefcase"></i>
-                            </div>
-                            <a href="{{ route('dosen.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div> --}}
-                      </div>
-                      <!-- ./col -->
-                  </div>
-                  <!-- /.row -->
+                        <div class="icon">
+                            <i class="ion ion-ios-albums"></i>
+                        </div>
+                        <a href="{{ route('produk.index', ['jenis_produk' => 'catering']) }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
 
-                  <!-- /.row (main row) -->
-              </div><!-- /.container-fluid -->
-          </section>
-          <!-- /.content -->
-      </div>
-      @endsection
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-gray">
+                        <div class="inner">
+                            <h3>{{$Kategori}}</h3>
+                            <p>Kategori</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-ios-albums"></i>
+                        </div>
+                        <a href="{{ route('kategori.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+
+
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-light">
+                        <div class="inner">
+                            <h3>{{$Admin}}</h3>
+                            <p>Admin</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-android-people"></i>
+                        </div>
+                        <a href="{{ route('admin.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    </div>
+@endsection
