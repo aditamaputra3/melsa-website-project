@@ -25,7 +25,7 @@
                 <button class="home-menu-button cake-btn">Melsa Kue</button>
             </div>
             <div class="home-menu-list d-flex justify-content-center flex-wrap p-2">
-                <a class="home-menu-card m-2" style="border:solid 2px rgb(207, 219, 231)">
+                <a class="home-menu-card m-2">
                     <div class="home-card-img ratio ratio-4x3">
                         <img src="/assets/img/guest/Catering 1.png" alt="">
                     </div>
