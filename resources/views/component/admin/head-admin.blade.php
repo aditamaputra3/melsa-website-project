@@ -32,20 +32,43 @@
 
     <link rel="manifest" href="/manifest.json">
     <style>
-        .melsa-color {
+        /* .melsa-color {
             color: #D90802 !important;
-        }
+        } */
 
-        .bg-warna-kustom {
+        .melsared1 {
             background-color: #D90802 !important;
+            color: #FFFFFF !important;
         }
 
-        .btn-red {
+        .melsared2 {
             background-color: #8F0000 !important;
+            color: #FFFFFF !important;
         }
 
-        .main-sidebar { 
-            background-color: #424242 !important 
+        .melsagray {
+            background-color: #424242 !important;
+            color: #ffffff !important;
+        }
+
+        .main-sidebar {
+            background-color: #424242 !important;
+            color: #FFFFFF !important;
+        }
+
+        .main-sidebar.sidebar-dark-melsared1 {
+            background-color: #424242 !important;
+        }
+
+        .main-sidebar.sidebar-dark-melsared1 .nav-sidebar>.nav-item>.nav-link.active {
+            background-color: #D90802 !important;
+            color: #FFFFFF !important;
+        }
+
+        .dataTables_wrapper .pagination .page-item.active .page-link {
+            background-color: #424242 !important;
+            border-color: #424242 !important;
+            color: #fff !important;
         }
     </style>
     <meta name="csrf-token" content="{{ csrf_token() }}">

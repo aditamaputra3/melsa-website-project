@@ -107,25 +107,6 @@
     }
 </script>
 
-{{-- @if (request()->route()->getName() != 'profile.aslab' &&
-        request()->route()->getName() != 'kategori.list' &&
-        request()->route()->getName() != 'tambah-barang' &&
-        request()->route()->getName() != 'tambah-barang.save' &&
-        request()->route()->getName() != 'edit-barang' &&
-        request()->route()->getName() != 'detail-barang' &&
-        request()->route()->getName() != 'delete-barang' &&
-        request()->route()->getName() != 'detail-kondisi' &&
-        request()->route()->getName() != 'delete-all-detail-kondisi' &&
-        request()->route()->getName() != 'add-detail-kondisi' &&
-        request()->route()->getName() != 'praktikum.asisten' &&
-        request()->route()->getName() != 'praktikum.storeAsisten' &&
-        request()->route()->getName() != 'bap.list' &&
-        request()->route()->getName() != 'bap.store' &&
-        request()->route()->getName() != 'bap.delete' &&
-        request()->route()->getName() != 'bap.topik' &&
-        request()->route()->getName() != 'bap.index' &&
-        request()->route()->getName() != 'bap.edit' &&
-        !request()->has('kategori')) --}}
     <script>
         function initializeDataTables(routeUrl, columns) {
             $.ajaxSetup({
@@ -146,8 +127,8 @@
                     
                 buttons: [{
                     extend: 'collection',
-                    text: '<i class="fa fa-print"></i>  Export',
-                    className: 'btn btn-success',
+                    text: '<i class="fa fa-print"></i> Export',
+                    className: 'btn btn-warning',
                     buttons: [{
                         extend: 'excel',
                         title: ''
