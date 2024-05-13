@@ -22,7 +22,8 @@ class ProdukController extends Controller
 
             // return response()->view('errors.404', [], 404);
         }
-
+     
+        $melsared1Style = 'background-color: #D90802 !important; color: #FFFFFF !important;';
         $kategori = DB::table('kategori')
             ->pluck('nama_kategori', 'id')
             ->toArray();
@@ -35,10 +36,10 @@ class ProdukController extends Controller
 
             return Datatables::of($data)
                 ->addIndexColumn()
-                ->addColumn('aksi', function ($row) {
+                ->addColumn('aksi', function ($row) use ($melsared1Style) {
                     $btn = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-warning btn-sm editData"><i class="fa fa-edit"></i></a>';
 
-                    $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-danger btn-sm deleteData" data-url="' . route('produk.store') . '"><i class="fa fa-trash"></i></a>';
+                      $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-sm deleteData" style="' . $melsared1Style . '" data-url="' . route('produk.store') . '"><i class="fa fa-trash"></i></a>';
 
                     return $btn;
                 })
