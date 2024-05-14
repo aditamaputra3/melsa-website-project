@@ -68,4 +68,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('produk', ProdukController::class)->except(['show']);
    // routes/web.php
    Route::get('/produk/{jenis_produk?}', [ProdukController::class, 'index'])->name('produk.index');
+   Route::post('/produk/{jenis_produk?}', [ProdukController::class, 'store'])->name('produk.store');
 });

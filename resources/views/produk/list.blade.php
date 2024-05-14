@@ -46,7 +46,7 @@
                                     <option>Pilih</option>
                                     @foreach($kategori as $id => $nama_kategori)
                                     <option value="{{ $id }}">{{ $nama_kategori }}</option>
-                                @endforeach
+                                    @endforeach
                                 </select>
                                 <span class="text-danger" id="error-id_kategori"></span>
                             </div>
@@ -62,7 +62,7 @@
                             <div class="form-group">
                                 <label for="foto_produk">Foto Produk</label>
                                 <input type="file" name="foto_produk" id="foto_produk" class="form-control" id="formFile">
-                                <span class="text-danger" id="error-foto_produk"></span>
+                                {{-- <span class="text-danger" id="error-foto_produk"></span> --}}
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@ let routeUrl = "{{ route('produk.index', ['jenis_produk' => $jenis_produk ?? nul
                 $('#id').val(data.id);
                 $('#nama_produk').val(data.nama_produk);
                 $('#harga_produk').val(data.harga_produk);
-                $('#foto_produk').val(data.foto_produk);
+                // $('#foto_produk').val(data.foto_produk);
                 $('#deskripsi_produk').val(data.deskripsi_produk);
                 $('#id_kategori').val(data.id_kategori);
                 $('#jenis_produk').val(data.jenis_produk);

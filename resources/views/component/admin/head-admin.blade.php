@@ -51,10 +51,10 @@
             color: #ffffff !important;
         }
 
-        .main-sidebar {
-            background-color: #424242 !important;
+        /* .main-sidebar {
+            background-color: #000000 !important;
             color: #FFFFFF !important;
-        }
+        } */
 
         .main-sidebar.sidebar-dark-melsared1 {
             background-color: #424242 !important;
