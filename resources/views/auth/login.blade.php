@@ -17,6 +17,18 @@
     <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+    <style>
+        /* Ubah warna border */
+.card.card-outline.card-warning {
+    border-color: #D90802; /* Warna kuning */
+}
+
+.melsared1 {
+            background-color: #D90802 !important;
+            color: #FFFFFF !important;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">
@@ -24,7 +36,9 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-warning">
             <div class="card-header text-center">
-                <a href="{{ route('index') }}" class="h1"><b>Melsagroup</b></a>
+                <a href="{{ route('index') }}">
+                    <img src="{{ asset('/assets/melsalogo2.png') }}" alt="Melsagroup" class="img-fluid" style="max-height: 50px;">
+                </a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Login to start your session</p>
@@ -38,7 +52,7 @@
                             </div>
                         </div>
                         <input type="text" class="form-control" name="username" id="username"
-                            placeholder="username">
+                            placeholder="Username">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-append">
@@ -52,7 +66,7 @@
                     </div>
                     <div class="row">
                         <div class="col-8">
-                            <div class="icheck-warning">
+                            <div class="icheck-dark">
                                 <input type="checkbox" id="remember" onclick="showPass()">
                                 <label for="remember">
                                     Show Password
@@ -61,7 +75,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-warning btn-block">Login</button>
+                            <button type="submit" class="btn melsared1 btn-block">Login</button>
                         </div>
                         <!-- /.col -->
                     </div>

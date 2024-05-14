@@ -39,7 +39,7 @@ class ProdukController extends Controller
                 ->addColumn('aksi', function ($row) use ($melsared1Style) {
                     $btn = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-warning btn-sm editData"><i class="fa fa-edit"></i></a>';
 
-                      $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-sm deleteData" style="' . $melsared1Style . '" data-url="' . route('produk.store') . '"><i class="fa fa-trash"></i></a>';
+                    $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-sm deleteData" style="' . $melsared1Style . '" data-url="' . route('produk.store') . '"><i class="fa fa-trash"></i></a>';
 
                     return $btn;
                 })
@@ -58,17 +58,23 @@ class ProdukController extends Controller
         $updatedBy = Auth::id();
         // Validasi request
         $request->validate([
-            'foto_produk' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan dengan aturan validasi yang Anda butuhkan
+            // 'foto_produk' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan dengan aturan validasi yang Anda butuhkan
         ]);
-
-        // Proses upload gambar
+    
+        // Inisialisasi variabel $imageName dengan nilai default
+        $imageName = 'default.png';
+    
+        // Cek apakah ada file yang diupload
         if ($request->hasFile('foto_produk')) {
-            $imageName = time() . '.' . $request->foto_produk->extension();
-            $request->foto_produk->storeAs('public/foto_produk', $imageName);
-        } else {
-            $imageName = null; // Atau berikan nilai default jika tidak ada gambar yang diupload
+            $image = $request->file('foto_produk');
+    
+            // Generate nama unik untuk file gambar
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+    
+            // Simpan gambar ke folder "public" menggunakan method "move"
+            $image->move(public_path('foto_produk'), $imageName);
         }
-
+    
         // Simpan data produk beserta nama file gambar ke database
         if (!empty($request->id_produk)) {
             $produk = Produk::find($request->id_produk);
@@ -92,7 +98,7 @@ class ProdukController extends Controller
                 'updatedby' => $updatedBy,
             ]);
         }
-
+    
         return response()->json(['success' => 'Data saved successfully.']);
     }
 
