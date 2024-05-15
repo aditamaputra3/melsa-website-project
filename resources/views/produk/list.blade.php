@@ -9,124 +9,126 @@
 @endsection
 
 @section('content')
-<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form">
-    <div class="modal-dialog modal-lg" role="document">
-        <form class="form-horizontal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title"></h4>
-                    <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" name="id" id="id" class="form-control">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="nama_produk">Nama Produk</label>
-                                <input type="text" name="nama_produk" id="nama_produk" class="form-control" autofocus>
-                                <span class="text-danger" id="error-nama_produk"></span>
+    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form">
+        <div class="modal-dialog modal-lg" role="document">
+            <form class="form-horizontal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="id" class="form-control">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nama_produk">Nama Produk</label>
+                                    <input type="text" name="nama_produk" id="nama_produk" class="form-control"
+                                        autofocus>
+                                    <span class="text-danger" id="error-nama_produk"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="harga_produk">Harga Produk</label>
+                                    <input type="number" name="harga_produk" id="harga_produk" class="form-control">
+                                    <span class="text-danger" id="error-harga_produk"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="deskripsi_produk">Deskripsi Produk</label>
+                                    <textarea name="deskripsi_produk" id="deskripsi_produk" class="form-control"></textarea>
+                                    <span class="text-danger" id="error-deskripsi_produk"></span>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="harga_produk">Harga Produk</label>
-                                <input type="number" name="harga_produk" id="harga_produk" class="form-control">
-                                <span class="text-danger" id="error-harga_produk"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="deskripsi_produk">Deskripsi Produk</label>
-                                <textarea name="deskripsi_produk" id="deskripsi_produk" class="form-control"></textarea>
-                                <span class="text-danger" id="error-deskripsi_produk"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="id_kategori">Kategori</label>
-                                <select name="id_kategori" id="id_kategori" class="form-control">
-                                    <option>Pilih</option>
-                                    @foreach($kategori as $id => $nama_kategori)
-                                    <option value="{{ $id }}">{{ $nama_kategori }}</option>
-                                    @endforeach
-                                </select>
-                                <span class="text-danger" id="error-id_kategori"></span>
-                            </div>
-                              <div class="form-group">
-                                <label for="jenis_produk">Jenis Produk</label>
-                                <select name="jenis_produk" id="jenis_produk" class="form-control">
-                                    <option>Pilih Jenis Produk</option>
-                                    <option value="kue">Melsa Kue</option>
-                                    <option value="catering">Melsa Catering</option>
-                                </select>
-                                <span class="text-danger" id="error-jenis_produk"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="foto_produk">Foto Produk</label>
-                                <input type="file" name="foto_produk" id="foto_produk" class="form-control" id="formFile">
-                                {{-- <span class="text-danger" id="error-foto_produk"></span> --}}
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="id_kategori">Kategori</label>
+                                    <select name="id_kategori" id="id_kategori" class="form-control">
+                                        <option>Pilih</option>
+                                        @foreach ($kategori as $id => $nama_kategori)
+                                            <option value="{{ $id }}">{{ $nama_kategori }}</option>
+                                        @endforeach
+                                    </select>
+                                    <span class="text-danger" id="error-id_kategori"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jenis_produk">Jenis Produk</label>
+                                    <select name="jenis_produk" id="jenis_produk" class="form-control">
+                                        <option>Pilih Jenis Produk</option>
+                                        <option value="kue">Melsa Kue</option>
+                                        <option value="catering">Melsa Catering</option>
+                                    </select>
+                                    <span class="text-danger" id="error-jenis_produk"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="foto_produk">Foto Produk</label>
+                                    <input type="file" name="foto_produk" id="foto_produk" class="form-control"
+                                        id="formFile">
+                                    {{-- <span class="text-danger" id="error-foto_produk"></span> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-danger close-btn" data-dismiss="modal"><i
+                                class="fa fa-arrow-circle-left"></i> Cancel</button>
+                        <button type="submit" class="btn btn-sm btn-dark" id="saveBtn"><i class="fa fa-save"></i>
+                            Save</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-danger close-btn" data-dismiss="modal"><i
-                            class="fa fa-arrow-circle-left"></i> Cancel</button>
-                    <button type="submit" class="btn btn-sm btn-dark" id="saveBtn"><i class="fa fa-save"></i>
-                        Save</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
-<section class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="card card-outline card-dark">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-4">
-                            <div class="d-flex justify-content-start" id="print">
-                                <!-- Second div content (if any) -->
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="button" onclick="addForm()" class="btn melsagray">
-                                    <i class="fa fa-plus"></i> Tambah Data
-                                </button>
-                                {{-- <a href="{{ route('produk.export') }}" class="btn btn-success">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-outline card-dark">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-4">
+                                <div class="d-flex justify-content-start" id="print">
+                                    <!-- Second div content (if any) -->
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" onclick="addForm()" class="btn melsagray">
+                                        <i class="fa fa-plus"></i> Tambah Data
+                                    </button>
+                                    {{-- <a href="{{ route('produk.export') }}" class="btn btn-success">
                                     <i class="fa fa-download"></i> Export
                                 </a> --}}
+                                </div>
                             </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped custom-table mb-0 no-footer" role="grid">
-                                <thead>
-                                    <tr role="row">
-                                        <th>#</th>
-                                        <th>Nama Produk</th>
-                                        <th>Harga Produk</th>
-                                        <th>Deskripsi Produk</th>
-                                        <th>Kategori Produk</th>
-                                        <th>Jenis Produk</th>
-                                        <th>Foto Produk</th>
-                                        <th>Diperbarui Oleh</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-striped custom-table mb-0 no-footer" role="grid">
+                                    <thead>
+                                        <tr role="row">
+                                            <th>#</th>
+                                            <th>Nama Produk</th>
+                                            <th>Harga Produk</th>
+                                            <th>Deskripsi Produk</th>
+                                            <th>Kategori Produk</th>
+                                            <th>Jenis Produk</th>
+                                            <th>Foto Produk</th>
+                                            <th>Diperbarui Oleh</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection
 
 @section('script')
     <script>
-let routeUrl = "{{ route('produk.index', ['jenis_produk' => $jenis_produk ?? null]) }}";
+        let routeUrl = "{{ route('produk.index', ['jenis_produk' => $jenis_produk ?? null]) }}";
 
         let columns = [{
                 data: 'DT_RowIndex',
@@ -140,6 +142,9 @@ let routeUrl = "{{ route('produk.index', ['jenis_produk' => $jenis_produk ?? nul
             {
                 data: 'harga_produk',
                 name: 'harga_produk',
+                render: function(data, type, row) {
+                    return 'Rp. ' + data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                }
             },
             {
                 data: 'deskripsi_produk',
@@ -152,6 +157,9 @@ let routeUrl = "{{ route('produk.index', ['jenis_produk' => $jenis_produk ?? nul
             {
                 data: 'jenis_produk',
                 name: 'jenis_produk',
+                render: function(data, type, row) {
+                    return 'Melsa ' + data;
+                }
             },
             {
                 data: 'foto_produk',
@@ -173,7 +181,7 @@ let routeUrl = "{{ route('produk.index', ['jenis_produk' => $jenis_produk ?? nul
         ];
 
         let table = initializeDataTables(routeUrl, columns);
-
+ 
         $('body').on('click', '.editData', function() {
             var id = $(this).data('id');
             $.get("{{ route('produk.index') }}" + '/' + id + '/edit', function(data) {

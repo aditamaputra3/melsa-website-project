@@ -44,4 +44,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Dalam file Model User.php
+
+public function produk()
+{
+    return $this->hasMany(Produk::class);
+}
 }
