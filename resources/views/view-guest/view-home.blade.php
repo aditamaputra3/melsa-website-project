@@ -1,12 +1,12 @@
-@extends('layout.layout-home-guest')
+@extends('layout.layout-guest')
 
 @section('content')
     <div class="background-image mb-5">
-        <div class="backdrop">
-        </div>
+        <div class="backdrop"></div>
+        <div class="backdrop-text"></div>
     </div>
     <div class="position-absolute top-50 start-50 translate-middle text-center hero-text">
-        <h1 class="mb-5">MELSA GROUP</h1>
+        <h1 class="mb-1 hero-title">MELSA GROUP</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptatibus accusantium adipisci,
             tempore ab iusto aliquid quasi esse veniam accusamus eius laboriosam quae! Ex quaerat quo ducimus?
             Deleniti, quasi impedit!</p>
@@ -19,14 +19,14 @@
                 ducimus blanditiis, iure
                 saepe pariatur ipsum dolor nostrum cupiditate, mollitia quaerat atque quas sint odio rem.</p>
         </div>
-        <div class="home-menu-container mb-4 w-100 my-4">
+        <div class="home-menu-container mb-4">
             <div class="home-menu-button-container d-flex justify-content-center">
                 <button class="home-menu-button catering-btn">Melsa Catering</button>
                 <button class="home-menu-button cake-btn">Melsa Kue</button>
             </div>
-            <div class="home-menu-list d-flex justify-content-center flex-wrap p-2">
-                <a class="home-menu-card m-2" style="border:solid 2px rgb(207, 219, 231)">
-                    <div class="home-card-img ratio ratio-4x3">
+            <div class="home-menu-list p-2">
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img">
                         <img src="/assets/img/guest/Catering 1.png" alt="">
                     </div>
                     <div class="home-menu-card-body">
@@ -36,7 +36,7 @@
                     </div>
                 </a>
                 <a class="home-menu-card m-2">
-                    <div class="home-card-img ratio ratio-4x3">
+                    <div class="home-card-img">
                         <img src="/assets/img/guest/Catering 1.png" alt="">
                     </div>
                     <div class="home-menu-card-body">
@@ -46,7 +46,7 @@
                     </div>
                 </a>
                 <a class="home-menu-card m-2">
-                    <div class="home-card-img ratio ratio-4x3">
+                    <div class="home-card-img">
                         <img src="/assets/img/guest/Catering 1.png" alt="">
                     </div>
                     <div class="home-menu-card-body">
@@ -56,7 +56,7 @@
                     </div>
                 </a>
                 <a class="home-menu-card m-2">
-                    <div class="home-card-img ratio ratio-4x3">
+                    <div class="home-card-img">
                         <img src="/assets/img/guest/Catering 1.png" alt="">
                     </div>
                     <div class="home-menu-card-body">
@@ -66,7 +66,7 @@
                     </div>
                 </a>
                 <a class="home-menu-card m-2">
-                    <div class="home-card-img ratio ratio-4x3">
+                    <div class="home-card-img">
                         <img src="/assets/img/guest/Catering 1.png" alt="">
                     </div>
                     <div class="home-menu-card-body">
@@ -79,20 +79,20 @@
         </div>
         <div class="home-content-why-container w-100 mb-4 py-4">
             <h1 class="text-center mx-4">Kenapa Harus Memilih Melsa?</h1>
-            <div class="d-flex justify-content-between flex-wrap p-2">
-                <div class=" px-3 text-center home-why-item">
-                    <img class="mb-5" src="/assets/img/guest/Fork&Spoon.png" alt="">
-                    <h4 class="mb-3">Lorem Ipsum</h4>
+            <div class="home-why-item-container">
+                <div class=" text-center home-why-item">
+                    <img src="/assets/img/guest/Fork&Spoon.png" alt="">
+                    <h4>Lorem Ipsum</h4>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                 </div>
-                <div class=" px-3 text-center home-why-item">
-                    <img class="mb-5" src="/assets/img/guest/Delivery.png" alt="">
-                    <h4 class="mb-3">Lorem Ipsum</h4>
+                <div class=" text-center home-why-item">
+                    <img src="/assets/img/guest/Delivery.png" alt="">
+                    <h4>Lorem Ipsum</h4>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                 </div>
-                <div class=" px-3 text-center home-why-item">
-                    <img class="mb-5" src="/assets/img/guest/Storage.png" alt="">
-                    <h4 class="mb-3">Lorem Ipsum</h4>
+                <div class=" text-center home-why-item">
+                    <img src="/assets/img/guest/Storage.png" alt="">
+                    <h4>Lorem Ipsum</h4>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                 </div>
             </div>

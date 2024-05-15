@@ -9,7 +9,7 @@
         <div class="dropdown" style="--i:2">
             <a class="navbar-menu drop-menu">Menu</a>
             <div class="dropdown-content">
-                <a class="dropdown-menu-catering" href="">Catering</a>
+                <a class="dropdown-menu-catering" href="/MenuCatering">Catering</a>
                 <a class="dropdown-menu-cake" href="/MenuCake">Cake</a>
             </div>
         </div>

@@ -3,7 +3,8 @@
 .header {
     position: fixed;
     position: absolute;
-    background-color: transparent;
+    background-color: var(--primary-1);
+    /* opacity: 0.9; */
     top: 0;
     left: 0;
     width: 100%;
@@ -86,12 +87,12 @@
 }
 
 .dropdown-menu-catering:hover {
-    background-color: var(--primary-2);
+    background-color: var(--primary-1);
     color: var(--neutral-2);
     border-radius: 7px 7px 0 0;
 }
 .dropdown-menu-cake:hover {
-    background-color: var(--primary-2);
+    background-color: var(--primary-1);
     color: var(--neutral-2);
     border-radius: 0 0 7px 7px;
 }
@@ -111,32 +112,70 @@
     background-position: center;
     z-index: -1;
 }
-.backdrop {
+.backdrop-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    min-height: 50vh;
+    width: 60%;
+    background-color: var(--neutral-2);
+    opacity: 0.65;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    z-index: 2;
+}
+/* .backdrop {
     min-height: 100vh;
-    background-color: var(--primary-1);
-    opacity: 0.5;
+    background-color: var(--neutral-2);
+    opacity: 0.8;
     background-size: cover;
     background-position: center;
     z-index: 1;
-}
+} */
 
 .hero-text {
-    color: var(--neutral-2);
+    color: var(--neutral-1);
     font-weight: bolder;
+    z-index: 3;
+}
+.hero-title {
+    color: var(--primary-1);
+    font-weight: bold;
 }
 /* End Home Hero */
 
 /* Home Content */
+
+.home-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 auto;
+}
+.home-menu-list {
+    display: flex;
+    row-gap: 2.5em;
+    column-gap: 3.7em;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: fit-content;
+}
 .home-menu-card {
     border-radius: 8px;
-    border: solid 2px var(--neutral-1);
-    width: 20rem;
+    width: 25.625rem;
+    height: 25.3rem;
     text-decoration: none;
     color: var(--neutral-1);
     cursor: pointer;
-    &:hover{
-        box-shadow: 5px 5px 5px var(--neutral-1) ;
-        transform: scale(1.01);
+    box-shadow: 5px 10px 20px var(--neutral-4);
+    transition: 0.5s;
+    &:hover {
+        box-shadow: 5px 15px 25px var(--neutral-4);
+        transform: scale(1.03);
         transition: transform 0.5s;
     }
 }
@@ -144,16 +183,32 @@
 .home-card-img img {
     border-radius: 8px 8px 0 0;
     width: 100%;
+    height: 18rem;
+    object-fit: fill;
     border-bottom: solid 1px var(--neutral-1);
 }
 
-.home-menu-card-body{
-    padding: 0.5rem 1rem;
+.home-menu-card-body {
+    padding: 1rem 1.5rem;
+}
+
+.home-why-item-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 9.8rem;
 }
 
 .home-why-item {
-    width: 25%;
+    width: 19.5em;
+    height: 19.5em;
     margin: 0 1rem;
+}
+
+.home-why-item img{
+    width: 11em;
+    height: 11em;
+    margin-bottom: 1.5rem;
 }
 .home-testimoni-card {
     width: 25%;
@@ -183,123 +238,38 @@
 }
 /* End Button */
 
-/* style-melsa catering-guest */
-.judul {
-    text-align: center;
-    font-family: Roboto, sans-serif;
-    font-size: 40px;
-    color: #8F0000;
-    font-weight: bold; /* Make the text bold */
-    margin-bottom: 50px;
+/* Melsa Menu Style */
 
-  }
-
-  .btn.dropdown-toggle {
+.btn.dropdown-toggle {
     text-align: left;
     background-color: transparent; /* Menghilangkan warna latar belakang */
-    border-color: #A3A3A3; 
+    border-color: #a3a3a3;
     color: #575757;
     border-width: 2px;
     margin-bottom: 50px;
     width: 350px;
 }
 
-
-.custom-row {
-    /* display: inline-block; */
-    /* margin-right: 5px; */
-    margin-right: -10px;
-}
-
-.melsacatering {
-    justify-content: space-between; 
-    align-items: center; /* Menempatkan item di tengah secara vertikal */
-    padding: 70px; /* Menambahkan padding */
-}
-
-/* style-card-melsa kue-guest */
-.card-container {
-    width: 100%;
-    /* margin-right: 15px; */
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-column-gap: 4em;
+.title-menu-container{
+    display: flex;
     justify-content: center;
+    column-gap: 10em;
+    
 }
 
-.card {
-    position: relative;
-    display: grid;
-    border-radius: 10px;
-    box-shadow: 0 15px 15px rgba(131, 130, 130, 0.2);
-    overflow: hidden;
-    /* Mengatur overflow agar gambar tidak melebihi batas card */
-    width: 100%;
-    margin-bottom: 60px;
-}
-
-.card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1em;
-    background-color: white;
-    /* Menambahkan latar belakang semi-transparan untuk judul dan teks */
-}
-
-.card-title {
-    font-weight: medium;
-    color: black;
-}
-
-.card-text {
-    color: black;
-    text-align: justify;
-    margin: 0.8em 0 1em 0;
-}
-
-.card-price {
-    color: #8F0000;
-    text-align: justify;
-    margin: 0.8em 0 1em 0;
-    font-weight: bold;
-}
-
-.number-row {
-    display: flex;
-    justify-content: space-between;
-    /* Distribute squares evenly */
-    width: fit-content;
-    /* Adjust width as needed */
-    margin: 0 auto;
-    /* Center the row horizontally */
-    gap: 15px;
-    font-family: Roboto, sans-serif;
-}
-
-.number-square {
-    width: 35px;
-    height: 40px;
-    background-color: transparent;
-    /* Mengatur latar belakang menjadi transparan */
-    color: red;
+.judul {
     text-align: center;
-    line-height: 50px;
-    font-size: 20px;
-    border-radius: 10px;    /* Menghapus border */
-    outline: 2px solid red;/* Menambahkan outline merah */
-    display: flex;
-    justify-content: center; /* Center the number horizontally */
-    align-items: center;
+    font-size: 40px;
+    color: var(--primary-2);
+    font-weight: bold; /* Make the text bold */
+    margin: 2em 0 1em 0;
+    background-color: red;
 }
 
-.number-square:hover {
-    background-color: red; /* Mengubah warna latar belakang saat hover */
-    color: white; /* Mengubah warna teks saat hover */
+.melsa-menu-container{
+    background-color: blue;
 }
-
-/* end style-card-melsa kue-guest */
+/* End Melsa Menu Style */
 
 /* Responsive */
 @media (max-width: 440px) {
@@ -328,13 +298,14 @@
 
     .navbar {
         position: absolute;
-        top: 76%;
+        top: 74%;
         left: 0;
         width: 100%;
         height: 0;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--primary-2);
+        /* opacity: 0.5; */
         overflow: hidden;
-        backdrop-filter: opacity(100%);
+        backdrop-filter: opacity(5%);
         transition: height 0.1s ease;
         -webkit-transition: height ease 0.3s;
     }
@@ -382,6 +353,13 @@
         background-color: var(--neutral-3);
         color: var(--neutral-2);
         border-radius: 12px;
+    }
+    .home-menu-list {
+        display: flex;
+        width: 22.5rem;
+        row-gap: 1rem;
+        margin-bottom: 2.5em;
+        justify-content: center;
     }
     /* End Home Content Responsive */
     /* End Home Style */
