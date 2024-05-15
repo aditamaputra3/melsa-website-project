@@ -2,17 +2,22 @@
 
 @section('content')
     <section class="">
-        {{-- <div class="background-image">
-            <div class="backdrop"> --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
             integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
         </script>
         </div>
         </div>
-        <div class= "melsacatering">
-            <div class = "judul">Melsa Catering</div>
-            <div class="row custom-row">
-                <div class="col">
+        <div class="melsa-menu-container">
+            <div class="title-menu-container">
+                <div class = "judul">
+                    <h1>Melsa Catering</h1>
+                </div>
+                <div class="judul">
+                    <h1>Melsa Cake</h1>
+                </div>
+            </div>
+            <div class="menu-content-container">
+                <div class="menu-controller-container">
                     <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kategori Produk
@@ -23,8 +28,6 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col">
                     <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Urutkan
@@ -35,8 +38,6 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col">
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit"> Search</button>
@@ -44,176 +45,72 @@
                 </div>
             </div>
             <div class="card-container">
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/catering/cat1.png" alt="">
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat2.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                        <h5 class="card-price">Rp 30.000</h5>
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat3.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                </a>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/catering/cat1.png" alt="">
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat4.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                        <h5 class="card-price">Rp 30.000</h5>
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat5.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                </a>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/catering/cat1.png" alt="">
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat6.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                        <h5 class="card-price">Rp 30.000</h5>
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                </a>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/catering/cat6.png" alt="">
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat2.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                        <h5 class="card-price">Rp 30.000</h5>
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat3.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                </a>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/catering/cat2.png" alt="">
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat4.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                        <h5 class="card-price">Rp 30.000</h5>
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat5.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                </a>
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img ratio ratio-4x3">
+                        <img src="/assets/img/guest/catering/cat1.png" alt="">
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat6.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                        <h5 class="card-price">Rp 30.000</h5>
                     </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat4.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat5.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" style="width: 21rem; height: 23rem;">
-                    <img src="assets/img/guest/catering/cat6.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="card-content">
-                            <h5 class="card-title">Spaghetti</h5>
-                            <p class="card-text">The point of using Lorem Ipsum is that it has a more
-                                content.</p>
-                            <h5 class="card-price">Rp 30.000</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <div class="number-row">
-                <div class="number-square">1</div>
-                <div class="number-square">2</div>
-                <div class="number-square">3</div>
+                </a>
             </div>
         </div>
     </section>
