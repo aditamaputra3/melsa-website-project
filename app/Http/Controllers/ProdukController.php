@@ -115,7 +115,7 @@ class ProdukController extends Controller
     public function edit($id)
     {
         $produk = Produk::find($id);
-        $produk->foto_produk = asset('storage/foto_produk/' . $produk->foto_produk); // Tambahkan URL gambar produk
+        // $produk->foto_produk = asset('storage/foto_produk/' . $produk->foto_produk); // Tambahkan URL gambar produk
         return response()->json($produk);
     }
 
