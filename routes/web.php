@@ -35,7 +35,7 @@ Route::get("/MenuCake", function () {
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/login', function () {
     if (Auth::check()) {
-        return redirect()->route('index'); // Redirect to home page
+        return redirect()->route('dashboard'); // Redirect to home page
     } else {
         return view('auth.login');
     }
