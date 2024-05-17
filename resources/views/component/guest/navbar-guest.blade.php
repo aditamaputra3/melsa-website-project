@@ -5,14 +5,8 @@
         <i class='bx bx-x' id="close-icon"></i>
     </label>
     <nav class="navbar">
-        <a class="navbar-menu" style="--i:1" href="/">Home</a>
-        <div class="dropdown" style="--i:2">
-            <a class="navbar-menu drop-menu">Menu</a>
-            <div class="dropdown-content">
-                <a class="dropdown-menu-catering" href="/MenuCatering">Catering</a>
-                <a class="dropdown-menu-cake" href="/MenuCake">Cake</a>
-            </div>
-        </div>
+        <a class="navbar-menu" style="--i:2" href="/">Home</a>
+        <a class="navbar-menu drop-menu" style="--i:1" href="/MenuCatering">Menu</a>
         <a class="navbar-menu" style="--i:0">Tentang</a>
     </nav>
 </header>

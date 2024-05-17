@@ -6,4 +6,6 @@
     --neutral-2: #fff;
     --neutral-3: #424242;
     --neutral-4: #dddcdc;
+    --shadow-1: 5px 10px 20px var(--neutral-4);
+    --shadow-2: 5px 15px 25px var(--neutral-4);
 }

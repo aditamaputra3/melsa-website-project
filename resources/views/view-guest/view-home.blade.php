@@ -24,7 +24,7 @@
                 <button class="home-menu-button catering-btn">Melsa Catering</button>
                 <button class="home-menu-button cake-btn">Melsa Kue</button>
             </div>
-            <div class="home-menu-list p-2">
+            <div class="home-menu-list home-menu-catering p-2">
                 <a class="home-menu-card m-2">
                     <div class="home-card-img">
                         <img src="/assets/img/guest/Catering 1.png" alt="">
@@ -37,10 +37,10 @@
                 </a>
                 <a class="home-menu-card m-2">
                     <div class="home-card-img">
-                        <img src="/assets/img/guest/Catering 1.png" alt="">
+                        <img src="/assets/img/guest/Catering 2.png" alt="">
                     </div>
                     <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <h5 class="home-menu-title fw-bold">Catering 2</h5>
                         <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         </p>
                     </div>
@@ -50,27 +50,39 @@
                         <img src="/assets/img/guest/Catering 1.png" alt="">
                     </div>
                     <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <h5 class="home-menu-title fw-bold">Catering 3</h5>
+                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="home-menu-list home-menu-cake p-2">
+                <a class="home-menu-card m-2">
+                    <div class="home-card-img">
+                        <img src="/assets/img/guest/Cup Cake.jpg" alt="">
+                    </div>
+                    <div class="home-menu-card-body">
+                        <h5 class="home-menu-title fw-bold">Cake 1</h5>
                         <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         </p>
                     </div>
                 </a>
                 <a class="home-menu-card m-2">
                     <div class="home-card-img">
-                        <img src="/assets/img/guest/Catering 1.png" alt="">
+                        <img src="/assets/img/guest/Kue Mocha.jpeg" alt="">
                     </div>
                     <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <h5 class="home-menu-title fw-bold">Cake 2</h5>
                         <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         </p>
                     </div>
                 </a>
                 <a class="home-menu-card m-2">
                     <div class="home-card-img">
-                        <img src="/assets/img/guest/Catering 1.png" alt="">
+                        <img src="/assets/img/guest/Cup Cake.jpg" alt="">
                     </div>
                     <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
+                        <h5 class="home-menu-title fw-bold">Cake 3</h5>
                         <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         </p>
                     </div>

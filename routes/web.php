@@ -27,7 +27,7 @@ Route::get("/MelsaDashboard", function () {
 
 });
 Route::get("/MenuCatering", function () {
-    return view('view-guest.view-catering');
+    return view('view-guest.view-menu');
 });
 Route::get("/MenuCake", function () {
     return view('view-guest.view-menu-cake');
