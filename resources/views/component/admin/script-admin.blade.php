@@ -108,6 +108,16 @@
 </script>
 
     <script>
+         var currentUrl = window.location.href;
+         var excludedUrls = [
+        '/perusahaan', // Route::get('/perusahaan', [PerusahaanController::class, 'index'])->name('perusahaan.index');
+        '/perusahaan' // Route::put('/perusahaan', [PerusahaanController::class, 'update'])->name('perusahaan.update');
+    ];
+    var isExcluded = excludedUrls.some(function(url) {
+        return currentUrl.includes(url);
+    });
+
+    if (!isExcluded) {
         function initializeDataTables(routeUrl, columns) {
             $.ajaxSetup({
                 headers: {
@@ -135,85 +145,6 @@
                     }, {
                         extend: 'pdf',
                         title: '',
-                        customize: function(doc) {
-                            // Tambahkan teks dan gambar di atas tabel saat ekspor PDF
-                            doc.content.splice(0, 0, {
-                                columns: [{
-                                    stack: [{
-                                            text: 'Institut Teknologi Nasional',
-                                            style: 'header',
-                                            alignment: 'center',
-                                            fontSize: 14,
-                                            bold: true
-                                        }, // Tambahkan 'bold: true' di sini
-                                        {
-                                            text: 'Program Studi Sistem Informasi',
-                                            style: 'subheader',
-                                            alignment: 'center',
-                                            fontSize: 14,
-                                            bold: true,
-                                            margin: [0, 3]
-                                        }, // Tambahkan 'bold: true' di sini
-                                        {
-                                            text: 'Jl. PKH. Mustapa No,23 Telp.7272215 - (Fax) 7202892 Bandung 40124',
-                                            style: 'subheader',
-                                            alignment: 'center',
-                                            fontSize: 10
-                                        }
-                                    ],
-                                    alignment: 'center'
-                                }],
-                                margin: [0, 10]
-                            });
-
-                            doc.content.splice(3, 0, {
-                                text: '', // Ruang kosong
-                                margin: [0,
-                                    10
-                                ] // Tambahkan ruang kosong antara kelas dan tabel
-                            });
-
-                            // Mengubah gaya tabel
-                            doc.styles.tableHeader = {
-                                fontSize: 10, // Ubah ukuran font header tabel
-                                bold: true, // Teks tebal
-                                fillColor: '#D8D8D8', // Warna latar belakang header tabel
-                                color: 'black', // Warna teks header tabel
-                                alignment: 'center', // Tengahkan teks
-                                margin: [0, 5], // Tambahkan margin atas dan bawah
-                                border: [true, true, true,
-                                    true
-                                ] // Atur border tabel (kiri, atas, kanan, bawah)
-                            };
-                            doc.styles.tableBodyEven = {
-                                fontSize: 10, // Ubah ukuran font sel-genap
-                                fillColor: '#F2F2F2', // Warna latar belakang sel-genap
-                                alignment: 'center', // Tengahkan teks
-                                margin: [0, 5] // Tambahkan margin atas dan bawah
-                            };
-
-                            doc.styles.tableBodyOdd = {
-                                fontSize: 10, // Ubah ukuran font sel-ganjil
-                                fillColor: 'white', // Warna latar belakang sel-ganjil
-                                alignment: 'center', // Tengahkan teks
-                                margin: [0, 5] // Tambahkan margin atas dan bawah
-                            };
-
-                            // Menerapkan gaya tabel ke semua tabel dalam dokumen
-                            doc.defaultStyle = {
-                                fontSize: 10
-                            };
-
-
-
-                            // Menambahkan ruang kosong antara "Program Studi Sistem Informasi" dan isi tabel
-                            doc.content.splice(1, 0, {
-                                text: '',
-                                margin: [0,
-                                    10
-                                ]
-                            });
-                        }
                     }, {
                         extend: 'csv',
                         title: ''
@@ -232,9 +163,7 @@
 
         // Expose the function to the global scope
         window.initializeDataTables = initializeDataTables;
-    </script>
 
-    <script>
         $('.close-btn').click(function(e) {
             $('.modal').modal('hide');
         });
@@ -307,12 +236,7 @@
                 });
             }
         });
+
+    }
     </script>
-{{-- @endif --}}
 
-
-{{-- <script>
-    $('#timepicker').timepicker({
-        uiLibrary: 'bootstrap5'
-    });
-</script> --}}

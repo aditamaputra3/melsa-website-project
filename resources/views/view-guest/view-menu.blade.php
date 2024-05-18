@@ -41,17 +41,17 @@
             </div>
             <div class="menu-container mb-5 p-2 catering-menu">
                 @foreach ($ProdukCatering as $produk)
-                <a class="menu-card">
-                    <div class="menu-card-img ratio ratio-4x3">
-                        <img src="{{ asset('images/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
-                    </div>
-                    <div class="menu-card-body">
-                        <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
-                        <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
-                        <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}</h5>
-                    </div>
-                </a>
-            @endforeach
+                    <a class="menu-card">
+                        <div class="menu-card-img ratio ratio-4x3">
+                            <img src="{{ asset('images/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                        </div>
+                        <div class="menu-card-body">
+                            <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
+                            <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
+                            <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}</h5>
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </div>
         <div class="menu-content-container cake-content-container">
@@ -87,17 +87,17 @@
             </div>
             <div class="menu-container mb-5 p-2 cake-menu">
                 @foreach ($ProdukKue as $produk)
-                <a class="menu-card">
-                    <div class="menu-card-img ratio ratio-4x3">
-                        <img src="{{ asset('images/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
-                    </div>
-                    <div class="menu-card-body">
-                        <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
-                        <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
-                        <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}</h5>
-                    </div>
-                </a>
-            @endforeach
+                    <a class="menu-card">
+                        <div class="menu-card-img ratio ratio-4x3">
+                            <img src="{{ asset('images/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                        </div>
+                        <div class="menu-card-body">
+                            <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
+                            <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
+                            <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}</h5>
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
