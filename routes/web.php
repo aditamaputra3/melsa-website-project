@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -22,9 +23,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
 
-Route::get("/menu", function () {
-    return view('view-guest.view-menu');
-});
+Route::get('menu', [MenuController::class, 'index'])->name('menu');
+
 Route::get("/detail", function () {
     return view('view-guest.view-menu-detail');
 });
