@@ -59,6 +59,13 @@
     display: none;
 }
 /* End Navbar */
+/* Footer Style */
+.footer-contact-container{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+/* End Footer Style */
 /* Home Style */
 /* Home Hero */
 .background-image {
@@ -110,7 +117,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 0 auto;
 }
 .home-menu-list {
     display: flex;
@@ -119,6 +125,7 @@
     justify-content: center;
     flex-wrap: wrap;
     width: fit-content;
+    width: 100%;
 }
 
 .home-menu-catering,
@@ -363,7 +370,7 @@
 }
 /* End Floating Link */
 
-/* Melsa Menu Style */
+/*Menu Style */
 .dropdown-toggle {
     text-align: left;
     background-color: var(--neutral-2); /* Menghilangkan warna latar belakang */
@@ -424,11 +431,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 4.25em;
+    column-gap: 4.25em;
+    row-gap: 1.5em;
 }
 
 .search-container {
-    width: 34.5em;
+    width: 23em;
     border: solid 2px var(--neutral-1);
     border-radius: 0.375rem;
 }
@@ -488,8 +496,122 @@
 .menu-price {
     color: var(--primary-2);
 }
-/* End Melsa Menu Style */
+/* End Menu Style */
+/* Detail Style */
+.detail-container {
+    /* background-color: aqua; */
+    padding-top: 6em;
+}
+.detail-content {
+    display: flex;
+    justify-content: center;
+    column-gap: 2em;
+    row-gap: 1em;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+.detail-img {
+    width: 28em;
+    height: 28em;
+}
+.detail-img img {
+    width: 100%;
+    height: 28rem;
+    object-fit: fill;
+    border-radius: 0.87em;
+}
+.detail-product {
+    padding: 1em 0.5em 2em 1em;
+    width: 55em;
+}
+.contact-whatsapp {
+    height: 3em;
+    display: flex;
+    column-gap: 0.5em;
+    text-decoration: none;
+    color: var(--neutral-2);
+    background-color: #25d366;
+    border: solid 0.1px #25d366;
+    box-shadow: 0 2px 5px var(--neutral-3);
+    width: fit-content;
+    font-size: 15px;
+    padding: 0.7em 1em 0 1em;
+    border-radius: 8px;
+}
+.related-title {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+.related-separator {
+    border: 3px solid var(--neutral-1);
+    width: 20em;
+    height: 1px !important;
+}
+/* End Detail Style */
+/* About Style */
+.about-container {
+    padding-top: 6em;
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+}
+.about-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    text-align: center;
+    width: 55%;
+    padding: auto;
+    margin-bottom: 3.5em;
+}
+.about-image {
+    width: fit-content;
+}
+.about-image img {
+    width: 100%;
+    height: 28em;
+    object-fit: fill;
+    border-radius: 0.87em;
+}
 
+.how-to-order {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    row-gap: 1em;
+    width: 100%;
+}
+.how-to-image {
+    width: 38em;
+}
+.how-to-image img {
+    width: 100%;
+    object-fit: fill;
+    border-radius: 0.87em;
+}
+.how-to-text-container {
+    width: fit-content;
+    height: fit-content;
+    white-space: wrap;
+}
+.how-to-text {
+    font-size: 1.2em;
+}
+/*End About Style */
 /* Responsive */
 @media (max-width: 440px) {
     /* Navbar Responsive */
@@ -563,13 +685,6 @@
         background-color: var(--neutral-3);
         color: var(--neutral-2);
         border-radius: 12px;
-    }
-    .home-menu-list {
-        display: flex;
-        width: 22.5rem;
-        row-gap: 1rem;
-        margin-bottom: 2.5em;
-        justify-content: center;
     }
     /* End Home Content Responsive */
     /* End Home Style */

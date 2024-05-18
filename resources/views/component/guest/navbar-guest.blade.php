@@ -6,7 +6,7 @@
     </label>
     <nav class="navbar">
         <a class="navbar-menu" style="--i:2" href="/">Home</a>
-        <a class="navbar-menu drop-menu" style="--i:1" href="/MenuCatering">Menu</a>
-        <a class="navbar-menu" style="--i:0">Tentang</a>
+        <a class="navbar-menu drop-menu" style="--i:1" href="/menu">Menu</a>
+        <a class="navbar-menu" style="--i:0" href="/about">Tentang</a>
     </nav>
 </header>

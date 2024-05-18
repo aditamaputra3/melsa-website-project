@@ -12,9 +12,9 @@
                         Melsa Group
                     </h4>
                     <p>
-                        Lorem ipsum is a placeholder text commonly used in 
-                        publishing and graphic design to demonstrate the visual 
-                        form of a document or 
+                        Lorem ipsum is a placeholder text commonly used in
+                        publishing and graphic design to demonstrate the visual
+                        form of a document or
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -67,10 +67,13 @@
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h4 class="text mb-10 font-weight-bold">Kontak Kami</h4>
                     <p><i class="fas fa-home mr-3"></i> Jalan Taman Srigunting nomor 5-6, Kecamatan Semarang Utara, Kota
-                        Semarang, Jawa Tengah</p>
-                    <p><i class="fas fa-envelope mr-3"></i> melsagroup@gmail.com</p>
-                    <p><i class="fas fa-phone mr-3"></i>+62243552099</p>
-                    <p><i class="fas fa-print mr-3"></i>022 374823</p>
+                        Semarang, Jawa Tengah
+                    </p>
+                    <div class="footer-contact-container">
+                        <a class="text-decoration-none"><img src="/assets/img/icon/whatsapp.png" alt=""></a>
+                        <a class="text-decoration-none"><img src="/assets/img/icon/instagram.png" alt=""></a>
+                        <a class="text-decoration-none"><img src="/assets/img/icon/tiktok.png" alt=""></a>
+                    </div>
                 </div>
                 <!-- Grid column -->
             </div>

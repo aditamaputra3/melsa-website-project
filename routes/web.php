@@ -22,16 +22,16 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
 
-Route::get("/MelsaDashboard", function () {
-    return view('view-guest.view-home');
-
-});
-Route::get("/MenuCatering", function () {
+Route::get("/menu", function () {
     return view('view-guest.view-menu');
 });
-Route::get("/MenuCake", function () {
-    return view('view-guest.view-menu-cake');
+Route::get("/detail", function () {
+    return view('view-guest.view-menu-detail');
 });
+Route::get("/about", function () {
+    return view('view-guest.view-about');
+});
+
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/login', function () {
     if (Auth::check()) {
