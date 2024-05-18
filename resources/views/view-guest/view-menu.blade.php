@@ -40,42 +40,18 @@
                 </form>
             </div>
             <div class="menu-container mb-5 p-2 catering-menu">
+                @foreach ($ProdukCatering as $produk)
                 <a class="menu-card">
                     <div class="menu-card-img ratio ratio-4x3">
-                        <img src="/assets/img/guest/catering/cat1.png" alt="">
+                        <img src="{{ asset('images/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
                     </div>
                     <div class="menu-card-body">
-                        <h5 class="menu-title fw-bold">Catering 1</h5>
-                        <p class="menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                        <h5 class="menu-price fw-bold">Rp 30.000</h5>
+                        <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
+                        <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
+                        <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}</h5>
                     </div>
                 </a>
-                <a class="menu-card">
-                    <div class="menu-card-img ratio ratio-4x3">
-                        <img src="/assets/img/guest/catering/cat2.png" alt="">
-                    </div>
-                    <div class="menu-card-body">
-                        <h5 class="menu-title fw-bold">Catering 2</h5>
-                        <p class="menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                        <h5 class="menu-price fw-bold">Rp 30.000</h5>
-                    </div>
-                </a>
-                <a class="menu-card">
-                    <div class="menu-card-img ratio ratio-4x3">
-                        <img src="/assets/img/guest/catering/cat3.png" alt="">
-                    </div>
-                    <div class="menu-card-body">
-                        <h5 class="menu-title fw-bold">Catering 3</h5>
-                        <p class="menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                        <h5 class="menu-price fw-bold">Rp 30.000</h5>
-                    </div>
-                </a>
+            @endforeach
             </div>
         </div>
         <div class="menu-content-container cake-content-container">
@@ -110,42 +86,18 @@
                 </form>
             </div>
             <div class="menu-container mb-5 p-2 cake-menu">
+                @foreach ($ProdukKue as $produk)
                 <a class="menu-card">
                     <div class="menu-card-img ratio ratio-4x3">
-                        <img src="/assets/img/guest/Cup Cake.jpg" alt="">
+                        <img src="{{ asset('images/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
                     </div>
                     <div class="menu-card-body">
-                        <h5 class="menu-title fw-bold">Cake 1</h5>
-                        <p class="menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                        <h5 class="menu-price fw-bold">Rp 30.000</h5>
+                        <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
+                        <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
+                        <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}</h5>
                     </div>
                 </a>
-                <a class="menu-card">
-                    <div class="menu-card-img ratio ratio-4x3">
-                        <img src="/assets/img/guest/Kue Mocha.jpeg" alt="">
-                    </div>
-                    <div class="menu-card-body">
-                        <h5 class="menu-title fw-bold">Cake 2</h5>
-                        <p class="menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                        <h5 class="menu-price fw-bold">Rp 30.000</h5>
-                    </div>
-                </a>
-                <a class="menu-card">
-                    <div class="menu-card-img ratio ratio-4x3">
-                        <img src="/assets/img/guest/Cup Cake.jpg" alt="">
-                    </div>
-                    <div class="menu-card-body">
-                        <h5 class="menu-title fw-bold">Cake 3</h5>
-                        <p class="menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                        <h5 class="menu-price fw-bold">Rp 30.000</h5>
-                    </div>
-                </a>
+            @endforeach
             </div>
         </div>
     </div>

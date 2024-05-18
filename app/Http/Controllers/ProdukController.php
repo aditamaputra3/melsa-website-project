@@ -15,14 +15,14 @@ class ProdukController extends Controller
     public function index(Request $request, $jenis_produk = null)
     {
         if ($jenis_produk === null) {
-    
+
             return redirect()->route('dashboard');
 
             // return view('errors.404');
 
             // return response()->view('errors.404', [], 404);
         }
-     
+
         $melsared1Style = 'background-color: #D90802 !important; color: #FFFFFF !important;';
         $kategori = DB::table('kategori')
             ->pluck('nama_kategori', 'id')
@@ -56,28 +56,21 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $updatedBy = Auth::id();
-        // Validasi request
+
         $request->validate([
-            // 'foto_produk' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan dengan aturan validasi yang Anda butuhkan
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
-    
-        // Inisialisasi variabel $imageName dengan nilai default
-        $imageName = 'default.png';
-    
-        // Cek apakah ada file yang diupload
-        if ($request->hasFile('foto_produk')) {
-            $image = $request->file('foto_produk');
-    
-            // Generate nama unik untuk file gambar
+
+        $imageName = 'default.png'; 
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-    
-            // Simpan gambar ke folder "public" menggunakan method "move"
-            $image->move(public_path('foto_produk'), $imageName);
+            $image->move(public_path('images'), $imageName);
         }
-    
-        // Simpan data produk beserta nama file gambar ke database
-        if (!empty($request->id_produk)) {
-            $produk = Produk::find($request->id_produk);
+
+        if (!empty($request->id)) {
+            $produk = Produk::find($request->id);
             $produk->nama_produk = $request->nama_produk;
             $produk->harga_produk = $request->harga_produk;
             $produk->foto_produk = $imageName;
@@ -98,19 +91,26 @@ class ProdukController extends Controller
                 'updatedby' => $updatedBy,
             ]);
         }
-    
+
         return response()->json(['success' => 'Data saved successfully.']);
     }
 
     private function idOtomatis()
     {
-        $count = Produk::where('id_produk', 'like', 'PRD%')->count();
-
+        $prefix = 'PRD';
+        $count = Produk::where('id_produk', 'like', $prefix . '%')->count();
         $nextNumber = sprintf('%02d', $count + 1);
+        $newId = $prefix . $nextNumber;
 
-        return 'PRD' . $nextNumber;
+        // Check if the generated ID already exists
+        while (Produk::where('id_produk', $newId)->exists()) {
+            $count++;
+            $nextNumber = sprintf('%02d', $count + 1);
+            $newId = $prefix . $nextNumber;
+        }
+
+        return $newId;
     }
-
 
     public function edit($id)
     {

@@ -62,9 +62,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="foto_produk">Foto Produk</label>
-                                    <input type="file" name="foto_produk" id="foto_produk" class="form-control"
-                                        id="formFile">
-                                    {{-- <span class="text-danger" id="error-foto_produk"></span> --}}
+                                    <input type="file" name="foto_produk" id="foto_produk" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -190,7 +188,7 @@
                 $('#id').val(data.id);
                 $('#nama_produk').val(data.nama_produk);
                 $('#harga_produk').val(data.harga_produk);
-                // $('#foto_produk').val(data.foto_produk);
+                $('#foto_produk').text(data.foto_produk);
                 $('#deskripsi_produk').val(data.deskripsi_produk);
                 $('#id_kategori').val(data.id_kategori);
                 $('#jenis_produk').val(data.jenis_produk);
@@ -202,7 +200,6 @@
             $('#id').val('');
             $('.modal-title').text('Tambah Data');
             $('#modal-form form')[0].reset();
-            $('#modal-form [name=nama_produk]').focus();
             $('#modal-form [name=nama_produk]').focus();
             $('#modal-form [name=harga_produk]').focus();
             $('#modal-form [name=foto_produk]').focus();
