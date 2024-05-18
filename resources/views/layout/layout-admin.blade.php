@@ -20,9 +20,7 @@
 
         <!-- Content -->
         <div class="content-wrapper" style="min-height: 2171.31px;">
-            {{-- @if (Request::is(
-                    'admin'
-                    )) --}}
+            @if(!Request::is('perusahaan'))
                 <section class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">
@@ -38,7 +36,7 @@
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
-            {{-- @endif --}}
+            @endif
             @yield('content')
         </div>
         <!-- /.Content -->

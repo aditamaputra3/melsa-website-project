@@ -7,59 +7,43 @@ use Illuminate\Http\Request;
 
 class PerusahaanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $perusahaan = Perusahaan::firstOrNew();
+
+        // Jika belum ada data, buat objek baru dengan nilai-nilai default
+        if (!$perusahaan->exists) {
+            $perusahaan->nama_perusahaan = '';
+            $perusahaan->slogan = '';
+            $perusahaan->no_telp = '';
+            $perusahaan->alamat = '';
+            $perusahaan->deskripsi = '';
+            $perusahaan->email = '';
+            $perusahaan->instagram = '';
+            $perusahaan->gmaps = '';
+            $perusahaan->tiktok = '';
+        }
+        return view('perusahaan.list', compact('perusahaan'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function update(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Perusahaan $perusahaan)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Perusahaan $perusahaan)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Perusahaan $perusahaan)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Perusahaan $perusahaan)
-    {
-        //
+        $perusahaan = Perusahaan::updateOrInsert(
+            ['id' => 1], // Karena hanya ada satu baris data, gunakan id = 1
+            [
+                'id_perusahaan' => '1',
+                'nama_perusahaan' => $request->nama_perusahaan,
+                'slogan' => $request->slogan,
+                'no_telp' => $request->no_telp,
+                'alamat' => $request->alamat,
+                'deskripsi' => $request->deskripsi,
+                'email' => $request->email,
+                'instagram' => $request->instagram,
+                'gmaps' => $request->gmaps,
+                'tiktok' => $request->tiktok,
+            ]
+        );
+    
+        return response()->json(['success' => 'Data perusahaan berhasil diperbarui.']);
     }
 }

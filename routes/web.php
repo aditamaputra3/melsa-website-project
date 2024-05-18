@@ -8,6 +8,7 @@ use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PerusahaanController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -69,4 +70,8 @@ Route::group(['middleware' => ['auth']], function () {
    // routes/web.php
    Route::get('/produk/{jenis_produk?}', [ProdukController::class, 'index'])->name('produk.index');
    Route::post('/produk/{jenis_produk?}', [ProdukController::class, 'store'])->name('produk.store');
+
+   Route::get('/perusahaan', [PerusahaanController::class, 'index'])->name('perusahaan.index');
+Route::put('/perusahaan', [PerusahaanController::class, 'update'])->name('perusahaan.update');
+
 });
