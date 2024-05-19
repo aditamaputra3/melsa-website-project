@@ -43,7 +43,7 @@
                 @foreach ($ProdukCatering as $produk)
                     <a class="menu-card">
                         <div class="menu-card-img ratio ratio-4x3">
-                            <img src="{{ asset('images/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                            <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
                         </div>
                         <div class="menu-card-body">
                             <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
@@ -89,7 +89,7 @@
                 @foreach ($ProdukKue as $produk)
                     <a class="menu-card">
                         <div class="menu-card-img ratio ratio-4x3">
-                            <img src="{{ asset('images/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                            <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
                         </div>
                         <div class="menu-card-body">
                             <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>

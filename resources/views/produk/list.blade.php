@@ -9,10 +9,11 @@
 @endsection
 
 @section('content')
-    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form">
+    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form"
+        enctype="multipart/form-data">
         <div class="modal-dialog modal-lg" role="document">
-            <form class="form-horizontal">
-                <div class="modal-content">
+            <div class="modal-content">
+                <form id="product-form" class="form-horizontal" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title"></h4>
                         <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
@@ -61,8 +62,13 @@
                                     <span class="text-danger" id="error-jenis_produk"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="foto_produk">Foto Produk</label>
-                                    <input type="file" name="foto_produk" id="foto_produk" class="form-control">
+                                    <label for="name">Gambar</label>
+                                    <div class="resitdc-image-choose">
+                                        <input type="file" name="foto_produk" id="photo"
+                                            class="resitdc-image-choose-input"
+                                            accept="image/.bmp, image/.png, image/.jpg, image/.jpeg">
+                                        <div class="resitdc-image-choose-preview"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -73,8 +79,8 @@
                         <button type="submit" class="btn btn-sm melsagray" id="saveBtn"><i class="fa fa-save"></i>
                             Save</button>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -108,7 +114,7 @@
                                             <th>Kategori Produk</th>
                                             <th>Jenis Produk</th>
                                             <th>Foto Produk</th>
-                                            <th>Diperbarui Oleh</th>
+                                            {{-- <th>Diperbarui Oleh</th> --}}
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -163,13 +169,16 @@
                 data: 'foto_produk',
                 name: 'foto_produk',
                 render: function(data, type, row) {
-                    return '<img src="' + data + '" width="100">';
+                    if (data) {
+                        return '<img src="{{ asset('storage/') }}/' + data + '" width="100">';
+                    }
+                    return '';
                 }
             },
-            {
-                data: 'updatedby',
-                name: 'updatedby',
-            },
+            // {
+            //     data: 'updatedby',
+            //     name: 'updatedby',
+            // },
             {
                 data: 'aksi',
                 name: 'aksi',
@@ -179,7 +188,21 @@
         ];
 
         let table = initializeDataTables(routeUrl, columns);
- 
+
+        $(".resitdc-image-choose .resitdc-image-choose-input").change(function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    $(".resitdc-image-choose .resitdc-image-choose-preview").css("background-image",
+                        `url('${e.target.result}')`);
+                }
+                reader.readAsDataURL(file);
+            } else {
+                $(".resitdc-image-choose .resitdc-image-choose-preview").removeAttr("style");
+            }
+        });
+
         $('body').on('click', '.editData', function() {
             var id = $(this).data('id');
             $.get("{{ route('produk.index') }}" + '/' + id + '/edit', function(data) {
@@ -196,17 +219,52 @@
         });
 
         function addForm() {
+            $(".resitdc-image-choose .resitdc-image-choose-preview").removeAttr("style");
             $("#modal-form").modal('show');
             $('#id').val('');
             $('.modal-title').text('Tambah Data');
             $('#modal-form form')[0].reset();
             $('#modal-form [name=nama_produk]').focus();
             $('#modal-form [name=harga_produk]').focus();
-            $('#modal-form [name=foto_produk]').focus();
             $('#modal-form [name=deskripsi_produk]').focus();
             $('#modal-form [name=id_kategori]').focus();
             $('#modal-form [name=jenis_produk]').focus();
         }
+
+        // $('#modal-form form').submit(function(event) {
+        //     event.preventDefault();
+
+        //     var formData = new FormData(document.getElementById('product-form'));
+        //     formData.append('nama_produk', $("#product-form input[name=nama_produk]").val());
+        //     formData.append('harga_produk', $("#product-form input[name=harga_produk]").val());
+        //     formData.append('deskripsi_produk', $("#product-form textarea[name=deskripsi_produk]").val());
+        //     formData.append('id_kategori', $("#product-form select[name=id_kategori]").val());
+        //     formData.append('jenis_produk', $("#product-form select[name=jenis_produk]").val());
+
+        //     var foto_produk = document.querySelector('#product-form input[name=foto_produk]');
+        //     formData.append('foto_produk', foto_produk.files[0]);
+
+        //     $.ajax({
+        //         type: 'POST',
+        //         url: routeUrl,
+        //         data: formData,
+        //         processData: false,
+        //         contentType: false,
+        //         dataType: 'json',
+        //         success: function(response) {
+        //             $('#modal-form').modal('hide');
+        //             table.ajax.reload();
+        //             alert('Data saved successfully');
+        //         },
+        //         error: function(response) {
+        //             var errors = $.parseJSON(response.responseText);
+        //             $('span[id^="error"]').text('');
+        //             $.each(errors.messages, function(key, value) {
+        //                 $('#error-' + key).text(value);
+        //             });
+        //         }
+        //     });
+        // });
 
         function validation(data, isCreate) {
             let formIsValid = true;
@@ -219,18 +277,10 @@
                 formIsValid = false;
                 $("#error-harga_produk").text('Harga produk wajib diisi.')
             }
-            // if (!data.foto_produk) {
-            //     formIsValid = false;
-            //     $("#error-foto_produk").text('Foto produk wajib diisi.')
-            // }
             if (!data.deskripsi_produk) {
                 formIsValid = false;
                 $("#error-deskripsi_produk").text('Deskripsi produk wajib diisi.')
             }
-            // if (!data.id_kategori) {
-            //     formIsValid = false;
-            //     $("#error-id_kategori").text('Kategori produk wajib diisi.')
-            // }
             if (!data.jenis_produk) {
                 formIsValid = false;
                 $("#error-jenis_produk").text('Jenis produk wajib diisi.')

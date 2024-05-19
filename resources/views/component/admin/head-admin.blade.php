@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
 
     <link rel="manifest" href="/manifest.json">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         /* .melsa-color {
             color: #D90802 !important;
@@ -71,4 +73,55 @@
             color: #fff !important;
         }
     </style>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+<style>
+    .resitdc-image-choose {
+        position: relative;
+        width: 100%;
+        height: 30vh;
+        border: 1px dashed #dedede;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .resitdc-image-choose .resitdc-image-choose-input {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .resitdc-image-choose .resitdc-image-choose-preview::after {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        content: "\f093";
+        font-size: 4rem;
+        color: #eaeaea;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .resitdc-image-choose .resitdc-image-choose-preview[style^="background-image:"] {
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .resitdc-image-choose .resitdc-image-choose-preview[style^="background-image:"]::after {
+        display: none !important;
+    }
+</style>
+
