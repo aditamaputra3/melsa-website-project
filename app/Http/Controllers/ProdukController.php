@@ -45,7 +45,7 @@ class ProdukController extends Controller
                 })
                 ->addColumn('nama_kategori', function ($row) {
                     return $row->kategori->nama_kategori ?? '';
-                }) 
+                })
                 ->rawColumns(['aksi'])
                 ->make(true);
         }
@@ -112,22 +112,49 @@ class ProdukController extends Controller
         return $newId;
     }
 
-    public function edit($id)
+    public function edit($id, Request $request)
     {
         $produk = Produk::find($id);
+
+        if ($request->hasFile('image')) {
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi file gambar
+            ]);
+
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName); // Simpan gambar ke folder 'public/images'
+
+            // Hapus gambar lama jika ada, kecuali jika nama filenya adalah 'default.png'
+            if (!empty($produk->foto_produk) && $produk->foto_produk !== 'default.png') {
+                $oldImagePath = public_path('images') . '/' . $produk->foto_produk;
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+
+            $produk->foto_produk = $imageName; // Menyimpan nama file gambar baru ke dalam kolom foto_produk
+        }
+
         if ($produk->foto_produk) {
             $produk->foto_produk = asset('storage/' . $produk->foto_produk);
         }
+
         return response()->json($produk);
     }
 
     public function destroy($id)
     {
         $produk = Produk::find($id);
-        // Hapus file gambar terkait dengan produk yang akan dihapus
-        if ($produk->foto_produk) {
-            Storage::delete('public/foto_produk/' . $produk->foto_produk);
+
+        // Hapus gambar dari storage jika ada, kecuali jika nama filenya adalah 'default.png'
+        if (!empty($produk->foto_produk) && $produk->foto_produk !== 'default.png') {
+            $imageFilePath = public_path('storage/' . $produk->foto_produk);
+            if (file_exists($imageFilePath)) {
+                unlink($imageFilePath);
+            }
         }
+
         $produk->delete();
         return response()->json(['success' => 'Data deleted successfully.']);
     }
