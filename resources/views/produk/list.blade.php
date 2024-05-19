@@ -69,6 +69,7 @@
                                             accept="image/.bmp, image/.png, image/.jpg, image/.jpeg">
                                         <div class="resitdc-image-choose-preview"></div>
                                     </div>
+                                    <small id="fotoHelp" class="form-text text-muted">Silakan pilih gambar dengan tipe file PNG, JPG, JPEG.</small>
                                 </div>
                             </div>
                         </div>
