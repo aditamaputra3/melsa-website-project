@@ -25,68 +25,40 @@
                 <button class="home-menu-button cake-btn">Melsa Kue</button>
             </div>
             <div class="home-menu-list home-menu-catering p-2">
-                <a class="home-menu-card m-2">
-                    <div class="home-card-img">
-                        <img src="/assets/img/guest/Catering 1.png" alt="">
-                    </div>
-                    <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Catering 1</h5>
-                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                </a>
-                <a class="home-menu-card m-2">
-                    <div class="home-card-img">
-                        <img src="/assets/img/guest/Catering 2.png" alt="">
-                    </div>
-                    <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Catering 2</h5>
-                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                </a>
-                <a class="home-menu-card m-2">
-                    <div class="home-card-img">
-                        <img src="/assets/img/guest/Catering 1.png" alt="">
-                    </div>
-                    <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Catering 3</h5>
-                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                </a>
+                <?php $count = 0; ?>
+                @foreach ($ProdukCatering as $produk)
+                    <?php if ($count == 3) {
+                        break;
+                    } ?>
+                    <a class="home-menu-card m-2">
+                        <div class="home-card-img">
+                            <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="">
+                        </div>
+                        <div class="home-menu-card-body">
+                            <h5 class="home-menu-title fw-bold">{{ $produk->nama_produk }}</h5>
+                            <p class="home-menu-desc">{{ $produk->deskripsi_produk }}</p>
+                        </div>
+                    </a>
+                    <?php $count++; ?>
+                @endforeach
             </div>
             <div class="home-menu-list home-menu-cake p-2">
-                <a class="home-menu-card m-2">
-                    <div class="home-card-img">
-                        <img src="/assets/img/guest/Cup Cake.jpg" alt="">
-                    </div>
-                    <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Cake 1</h5>
-                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                </a>
-                <a class="home-menu-card m-2">
-                    <div class="home-card-img">
-                        <img src="/assets/img/guest/Kue Mocha.jpeg" alt="">
-                    </div>
-                    <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Cake 2</h5>
-                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                </a>
-                <a class="home-menu-card m-2">
-                    <div class="home-card-img">
-                        <img src="/assets/img/guest/Cup Cake.jpg" alt="">
-                    </div>
-                    <div class="home-menu-card-body">
-                        <h5 class="home-menu-title fw-bold">Cake 3</h5>
-                        <p class="home-menu-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                </a>
+                <?php $count = 0; ?>
+                @foreach ($ProdukKue as $produk)
+                    <?php if ($count == 3) {
+                        break;
+                    } ?>
+                    <a class="home-menu-card m-2">
+                        <div class="home-card-img">
+                            <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="">
+                        </div>
+                        <div class="home-menu-card-body">
+                            <h5 class="home-menu-title fw-bold">{{ $produk->nama_produk }}</h5>
+                            <p class="home-menu-desc">{{ $produk->deskripsi_produk }}</p>
+                        </div>
+                    </a>
+                    <?php $count++; ?>
+                @endforeach
             </div>
         </div>
         <div class="home-content-why-container w-100 mb-4 py-4">

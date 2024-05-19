@@ -41,7 +41,7 @@
             </div>
             <div class="menu-container mb-5 p-2 catering-menu">
                 @foreach ($ProdukCatering as $produk)
-                    <a class="menu-card">
+                    <a class="menu-card" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
                         <div class="menu-card-img ratio ratio-4x3">
                             <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
                         </div>
@@ -87,7 +87,7 @@
             </div>
             <div class="menu-container mb-5 p-2 cake-menu">
                 @foreach ($ProdukKue as $produk)
-                    <a class="menu-card">
+                    <a class="menu-card" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
                         <div class="menu-card-img ratio ratio-4x3">
                             <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
                         </div>

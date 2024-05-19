@@ -26,9 +26,7 @@ Route::get('/', [LandingPageController::class, 'index'])->name('index');
 
 Route::get('menu', [MenuController::class, 'index'])->name('menu');
 
-Route::get("/detail", function () {
-    return view('view-guest.view-menu-detail');
-});
+Route::get('/menu/{id}', [MenuController::class, 'getDetail'])->name('detail-produk');
 Route::get("/about", function () {
     return view('view-guest.view-about');
 });
@@ -67,11 +65,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('kategori', KategoriController::class);
 
     Route::resource('produk', ProdukController::class)->except(['show']);
-   // routes/web.php
-   Route::get('/produk/{jenis_produk?}', [ProdukController::class, 'index'])->name('produk.index');
-   Route::post('/produk/{jenis_produk?}', [ProdukController::class, 'store'])->name('produk.store');
+    // routes/web.php
+    Route::get('/produk/{jenis_produk?}', [ProdukController::class, 'index'])->name('produk.index');
+    Route::post('/produk/{jenis_produk?}', [ProdukController::class, 'store'])->name('produk.store');
 
-   Route::get('/perusahaan', [PerusahaanController::class, 'index'])->name('perusahaan.index');
-Route::put('/perusahaan', [PerusahaanController::class, 'update'])->name('perusahaan.update');
-
+    Route::get('/perusahaan', [PerusahaanController::class, 'index'])->name('perusahaan.index');
+    Route::put('/perusahaan', [PerusahaanController::class, 'update'])->name('perusahaan.update');
 });
