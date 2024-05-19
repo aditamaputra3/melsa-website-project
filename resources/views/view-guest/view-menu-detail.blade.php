@@ -13,11 +13,14 @@
                 <p class="detail-desc">{{ $data->deskripsi_produk }}</p>
                 <div class="order-contact">
                     <p class="fw-bold">Untuk pemesanan hubungi nomor whatsapp di bawah : </p>
-                    <a class="contact-whatsapp">
-                        <span class="material-symbols-outlined">
-                            call
-                        </span>
-                        <p class="fw-bolder">+62 822-1805-0200</p>
+                        <a href="https://wa.me/{{ $perusahaan->no_telp ?? 'notavail' }}" 
+                            style="display: inline-block; padding: 10px 20px; background-color: rgb(37 211 102); color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold;" 
+                            class="contact-whatsapp">
+                            <span class="material-symbols-outlined" style="vertical-align: middle; margin-right: 5px;">
+                                call
+                            </span>
+                            +{{ $perusahaan->no_telp ?? 'Nomor Belum Tersedia' }}
+
                     </a>
                 </div>
             </div>

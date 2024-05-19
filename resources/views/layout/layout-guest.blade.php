@@ -8,24 +8,8 @@
 <body id="bootstrap-override">
     @include('component.guest.navbar-guest')
     @yield('content')
-    <div class="floating-container">
-        <div class="floating-button">?</div>
-        <div class="element-container">
-            <span class="float-element">
-                <a href="" class="">
-                    <span class="material-symbols-outlined material-icons">
-                        call
-                    </span></a>
-            </span>
-            <span class="float-element">
-                <a href="">
-                    <span class="material-symbols-outlined material-icons">
-                        location_on
-                    </span>
-                </a>
-            </span>
-        </div>
-    </div>
+  
+    @include('component.guest.floating-guest')
     <div>
         @include('component.guest.footer-guest')
     </div>
