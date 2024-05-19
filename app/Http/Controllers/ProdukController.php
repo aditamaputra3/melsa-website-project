@@ -45,7 +45,7 @@ class ProdukController extends Controller
                 })
                 ->addColumn('nama_kategori', function ($row) {
                     return $row->kategori->nama_kategori ?? '';
-                })
+                }) 
                 ->rawColumns(['aksi'])
                 ->make(true);
         }
@@ -57,34 +57,34 @@ class ProdukController extends Controller
     {
         $updatedBy = Auth::id();
 
-        $request->validate([
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
-        ]);
+        $gambar_barang = $request->file("foto_produk");
 
-        $imageName = 'default.png'; 
-
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
+        if ($request->hasFile('foto_produk') && $request->file('foto_produk')->isValid()) {
+            $folderPath = 'images';
+            if (!Storage::exists($folderPath)) {
+                Storage::makeDirectory($folderPath);
+            }
+            $gambar_path = $request->file('foto_produk')->store($folderPath, 'public');
+        } else {
+            $gambar_path = "default.png";
         }
 
         if (!empty($request->id)) {
             $produk = Produk::find($request->id);
             $produk->nama_produk = $request->nama_produk;
             $produk->harga_produk = $request->harga_produk;
-            $produk->foto_produk = $imageName;
             $produk->deskripsi_produk = $request->deskripsi_produk;
             $produk->id_kategori = $request->id_kategori;
             $produk->jenis_produk = $request->jenis_produk;
             $produk->updatedby = $updatedBy;
+            if (!empty($gambar_path)) $produk->foto_produk = $gambar_path;
             $produk->save();
         } else {
             Produk::create([
                 'id_produk' => $this->idOtomatis(),
                 'nama_produk' => $request->nama_produk,
                 'harga_produk' => $request->harga_produk,
-                'foto_produk' => $imageName,
+                'foto_produk' => $gambar_path,
                 'deskripsi_produk' => $request->deskripsi_produk,
                 'id_kategori' => $request->id_kategori,
                 'jenis_produk' => $request->jenis_produk,
@@ -115,7 +115,9 @@ class ProdukController extends Controller
     public function edit($id)
     {
         $produk = Produk::find($id);
-        // $produk->foto_produk = asset('storage/foto_produk/' . $produk->foto_produk); // Tambahkan URL gambar produk
+        if ($produk->foto_produk) {
+            $produk->foto_produk = asset('storage/' . $produk->foto_produk);
+        }
         return response()->json($produk);
     }
 
