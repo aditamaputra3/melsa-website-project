@@ -53,14 +53,14 @@
                                     <span class="text-danger" id="error-id_kategori"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="jenis_produk">Jenis Produk</label>
-                                    <select name="jenis_produk" id="jenis_produk" class="form-control">
+                                    <select name="jenis_produk" id="jenis_produk" class="form-control" hidden>
                                         <option>Pilih Jenis Produk</option>
-                                        <option value="kue">Melsa Kue</option>
-                                        <option value="catering">Melsa Catering</option>
+                                        <option value="kue" {{ $jenis_produk === 'kue' ? 'selected' : '' }}>Melsa Kue</option>
+                                        <option value="catering" {{ $jenis_produk === 'catering' ? 'selected' : '' }}>Melsa Catering</option>
                                     </select>
                                     <span class="text-danger" id="error-jenis_produk"></span>
                                 </div>
+                                
                                 <div class="form-group">
                                     <label for="name">Gambar</label>
                                     <div class="resitdc-image-choose">
@@ -69,6 +69,7 @@
                                             accept="image/.bmp, image/.png, image/.jpg, image/.jpeg">
                                         <div class="resitdc-image-choose-preview"></div>
                                     </div>
+                                    <small id="fotoHelp" class="form-text text-muted">Silakan pilih gambar dengan tipe file PNG, JPG, JPEG.</small>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +113,7 @@
                                             <th>Harga Produk</th>
                                             <th>Deskripsi Produk</th>
                                             <th>Kategori Produk</th>
-                                            <th>Jenis Produk</th>
+                                            {{-- <th>Jenis Produk</th> --}}
                                             <th>Foto Produk</th>
                                             {{-- <th>Diperbarui Oleh</th> --}}
                                             <th>Aksi</th>
@@ -147,7 +148,7 @@
                 data: 'harga_produk',
                 name: 'harga_produk',
                 render: function(data, type, row) {
-                    return 'Rp. ' + data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                    return 'Rp ' + data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
                 }
             },
             {
@@ -158,13 +159,13 @@
                 data: 'kategori.nama_kategori',
                 name: 'kategori.nama_kategori',
             },
-            {
-                data: 'jenis_produk',
-                name: 'jenis_produk',
-                render: function(data, type, row) {
-                    return 'Melsa ' + data;
-                }
-            },
+            // {
+            //     data: 'jenis_produk',
+            //     name: 'jenis_produk',
+            //     render: function(data, type, row) {
+            //         return 'Melsa ' + data;
+            //     }
+            // },
             {
                 data: 'foto_produk',
                 name: 'foto_produk',
@@ -230,41 +231,6 @@
             $('#modal-form [name=id_kategori]').focus();
             $('#modal-form [name=jenis_produk]').focus();
         }
-
-        // $('#modal-form form').submit(function(event) {
-        //     event.preventDefault();
-
-        //     var formData = new FormData(document.getElementById('product-form'));
-        //     formData.append('nama_produk', $("#product-form input[name=nama_produk]").val());
-        //     formData.append('harga_produk', $("#product-form input[name=harga_produk]").val());
-        //     formData.append('deskripsi_produk', $("#product-form textarea[name=deskripsi_produk]").val());
-        //     formData.append('id_kategori', $("#product-form select[name=id_kategori]").val());
-        //     formData.append('jenis_produk', $("#product-form select[name=jenis_produk]").val());
-
-        //     var foto_produk = document.querySelector('#product-form input[name=foto_produk]');
-        //     formData.append('foto_produk', foto_produk.files[0]);
-
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: routeUrl,
-        //         data: formData,
-        //         processData: false,
-        //         contentType: false,
-        //         dataType: 'json',
-        //         success: function(response) {
-        //             $('#modal-form').modal('hide');
-        //             table.ajax.reload();
-        //             alert('Data saved successfully');
-        //         },
-        //         error: function(response) {
-        //             var errors = $.parseJSON(response.responseText);
-        //             $('span[id^="error"]').text('');
-        //             $.each(errors.messages, function(key, value) {
-        //                 $('#error-' + key).text(value);
-        //             });
-        //         }
-        //     });
-        // });
 
         function validation(data, isCreate) {
             let formIsValid = true;

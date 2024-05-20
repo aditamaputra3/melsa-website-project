@@ -28,6 +28,8 @@ class KategoriController extends Controller
         }
 
         return view('kategori.list');
+
+   
     }
 
     public function store(Request $request)

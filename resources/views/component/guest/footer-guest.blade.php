@@ -70,9 +70,9 @@
                         Semarang, Jawa Tengah
                     </p>
                     <div class="footer-contact-container">
-                        <a class="text-decoration-none"><img src="/assets/img/icon/whatsapp.png" alt=""></a>
-                        <a class="text-decoration-none"><img src="/assets/img/icon/instagram.png" alt=""></a>
-                        <a class="text-decoration-none"><img src="/assets/img/icon/tiktok.png" alt=""></a>
+                        <a class="text-decoration-none" href="https://wa.me/{{$perusahaan->no_telp ?? 'notavail'}}"><img src="/assets/img/icon/whatsapp.png" alt=""></a>
+                        <a class="text-decoration-none" href="https://www.instagram.com/{{$perusahaan->instagram ?? 'notavail'}}"><img src="/assets/img/icon/instagram.png" alt=""></a>
+                        <a class="text-decoration-none" href="https://www.tiktok.com/{{$perusahaan->tiktok ?? 'notavail'}}"><img src="/assets/img/icon/tiktok.png" alt=""></a>
                     </div>
                 </div>
                 <!-- Grid column -->

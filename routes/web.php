@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataAdminController;
+use App\Http\Controllers\FloatingController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\MenuController;
@@ -26,6 +27,8 @@ Route::get('/', [LandingPageController::class, 'index'])->name('index');
 
 Route::get('menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/menu/kategori/{id}', [MenuController::class, 'getProductWhere'])->name('menu-kategori');
+
+Route::get('menu', [MenuController::class, 'index'])->name('menu');
 
 Route::get('/menu/{id}', [MenuController::class, 'getDetail'])->name('detail-produk');
 Route::get("/about", function () {

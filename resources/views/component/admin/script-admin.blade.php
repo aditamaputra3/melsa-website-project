@@ -2,14 +2,6 @@
 <script src="/assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Select2 -->
-<script src="/assets/plugins/select2/js/select2.full.min.js"></script>
-<script src="https://kit.fontawesome.com/198ace4666.js" crossorigin="anonymous"></script>
-<!-- InputMask -->
-<script src="/assets/plugins/moment/moment.min.js"></script>
-<script src="/assets/plugins/inputmask/jquery.inputmask.min.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Bootstrap -->
 <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->
@@ -20,43 +12,17 @@
 <script src="/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
 <script src="/assets/plugins/jszip/jszip.min.js"></script>
-<script src="/assets/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="/assets/plugins/pdfmake/vfs_fonts.js"></script>
 <script src="/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="/assets/plugins/datatables-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
-<script src="/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="/assets/plugins/pdfmake/pdfmake.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/assets/dist/js/adminlte.js"></script>
 <!-- PAGE PLUGINS -->
-<!-- jQuery Mapael -->
-<script src="/assets/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="/assets/plugins/raphael/raphael.min.js"></script>
-<script src="/assets/plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="/assets/plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- ChartJS -->
-<script src="/assets/plugins/chart.js/Chart.min.js"></script>
 <!-- SweetAlert2 -->
 <script src="/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
-<!-- Toastr -->
-<script src="/assets/plugins/toastr/toastr.min.js"></script>
 
-{{-- <script>
- $(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2()
-    $(this).select2({
-        dropdownParent: $(this).parent(),
-    });
-
-    //Initialize Select2 Elements
-    // $('.select2bs4').select2({
-    //   theme: 'bootstrap4'
-    // })
-})
-</script> --}}
 <script>
     /*** add active class and stay opened when selected ***/
     var url = window.location;
