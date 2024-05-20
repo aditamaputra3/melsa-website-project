@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use Error;
@@ -12,8 +13,16 @@ class MenuController extends Controller
     {
         $ProdukKue = Produk::where('jenis_produk', 'kue')->get();
         $ProdukCatering = Produk::where('jenis_produk', 'catering')->get();
+        $Kategori = Kategori::all();
 
-        return view('view-guest.view-menu', compact('ProdukKue', 'ProdukCatering'));
+        return view('view-guest.view-menu', compact('ProdukKue', 'ProdukCatering', 'Kategori'));
+    }
+    public function getProductWhere($id)
+    {
+        $ProdukKue = Produk::where('id_kategori', $id)->where('jenis_produk', 'kue')->get();
+        $ProdukCatering = Produk::where('id_kategori', $id)->where('jenis_produk', 'catering')->get();
+        $Kategori = Kategori::all();
+        return view('view-guest.view-menu', compact('ProdukCatering', 'ProdukKue', 'Kategori'));
     }
 
     public function getDetail($id)

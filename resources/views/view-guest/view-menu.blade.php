@@ -15,11 +15,10 @@
                         Kategori Produk
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        @foreach ($Kategori as $jenis)
+                            <li><a class="dropdown-item" href="">{{ $jenis->nama_kategori }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -61,11 +60,15 @@
                         Kategori Produk
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        @foreach ($Kategori as $jenis)
+                            <li><a class="dropdown-item kategori-produk">{{ $jenis->nama_kategori }}</a>
+                            </li>
+                        @endforeach
+                        <script>
+                            $(".kategori-produk").on('click', function() {
+                                
+                            })
+                        </script>
                     </ul>
                 </div>
                 <div class="dropdown">

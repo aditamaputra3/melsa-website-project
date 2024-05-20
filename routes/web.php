@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
 
 Route::get('menu', [MenuController::class, 'index'])->name('menu');
+Route::get('/menu/kategori/{id}', [MenuController::class, 'getProductWhere'])->name('menu-kategori');
 
 Route::get('/menu/{id}', [MenuController::class, 'getDetail'])->name('detail-produk');
 Route::get("/about", function () {
