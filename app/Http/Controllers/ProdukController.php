@@ -34,17 +34,19 @@ class ProdukController extends Controller
                 ->latest()
                 ->get();
 
-            return Datatables::of($data)
+                return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('aksi', function ($row) use ($melsared1Style) {
                     $btn = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-warning btn-sm editData"><i class="fa fa-edit"></i></a>';
-
                     $btn .= ' <a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-sm deleteData" style="' . $melsared1Style . '" data-url="' . route('produk.store') . '"><i class="fa fa-trash"></i></a>';
-
                     return $btn;
                 })
                 ->addColumn('nama_kategori', function ($row) {
-                    return $row->kategori->nama_kategori ?? '';
+                    if ($row->kategori) {
+                        return $row->kategori->nama_kategori;
+                    } else {
+                        return ''; // atau nilai lain yang Anda inginkan untuk menggantikan nilai null
+                    }
                 })
                 ->rawColumns(['aksi'])
                 ->make(true);
@@ -65,10 +67,10 @@ class ProdukController extends Controller
                 Storage::makeDirectory($folderPath);
             }
             $gambar_path = $request->file('foto_produk')->store($folderPath, 'public');
-        } else {
+        } elseif (empty($request->id)) {
             $gambar_path = "default.png";
         }
-
+        
         if (!empty($request->id)) {
             $produk = Produk::find($request->id);
             $produk->nama_produk = $request->nama_produk;
@@ -80,16 +82,16 @@ class ProdukController extends Controller
             if (!empty($gambar_path)) $produk->foto_produk = $gambar_path;
             $produk->save();
         } else {
-            Produk::create([
-                'id_produk' => $this->idOtomatis(),
-                'nama_produk' => $request->nama_produk,
-                'harga_produk' => $request->harga_produk,
-                'foto_produk' => $gambar_path,
-                'deskripsi_produk' => $request->deskripsi_produk,
-                'id_kategori' => $request->id_kategori,
-                'jenis_produk' => $request->jenis_produk,
-                'updatedby' => $updatedBy,
-            ]);
+            $produk = new Produk();
+            $produk->id_produk = $this->idOtomatis();
+            $produk->nama_produk = $request->nama_produk;
+            $produk->harga_produk = $request->harga_produk;
+            $produk->foto_produk = $gambar_path ?? "default.png";
+            $produk->deskripsi_produk = $request->deskripsi_produk;
+            $produk->id_kategori = $request->id_kategori;
+            $produk->jenis_produk = $request->jenis_produk;
+            $produk->updatedby = $updatedBy;
+            $produk->save();
         }
 
         return response()->json(['success' => 'Data saved successfully.']);

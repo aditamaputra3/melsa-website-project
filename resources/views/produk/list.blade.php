@@ -55,12 +55,14 @@
                                 <div class="form-group">
                                     <select name="jenis_produk" id="jenis_produk" class="form-control" hidden>
                                         <option>Pilih Jenis Produk</option>
-                                        <option value="kue" {{ $jenis_produk === 'kue' ? 'selected' : '' }}>Melsa Kue</option>
-                                        <option value="catering" {{ $jenis_produk === 'catering' ? 'selected' : '' }}>Melsa Catering</option>
+                                        <option value="kue" {{ $jenis_produk === 'kue' ? 'selected' : '' }}>Melsa Kue
+                                        </option>
+                                        <option value="catering" {{ $jenis_produk === 'catering' ? 'selected' : '' }}>Melsa
+                                            Catering</option>
                                     </select>
                                     <span class="text-danger" id="error-jenis_produk"></span>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="name">Gambar</label>
                                     <div class="resitdc-image-choose">
@@ -69,7 +71,8 @@
                                             accept="image/.bmp, image/.png, image/.jpg, image/.jpeg">
                                         <div class="resitdc-image-choose-preview"></div>
                                     </div>
-                                    <small id="fotoHelp" class="form-text text-muted">Silakan pilih gambar dengan tipe file PNG, JPG, JPEG.</small>
+                                    <small id="fotoHelp" class="form-text text-muted">Silakan pilih gambar dengan tipe file
+                                        PNG, JPG, JPEG.</small>
                                 </div>
                             </div>
                         </div>
@@ -158,6 +161,13 @@
             {
                 data: 'kategori.nama_kategori',
                 name: 'kategori.nama_kategori',
+                defaultContent: 'Belum Dipilih'
+                // render: function(data, type, row) {
+                //     if (type === 'null') {
+                //         return data ? data : 'Kategori Belum';
+                //     }
+                //     return data;
+                // }
             },
             // {
             //     data: 'jenis_produk',
@@ -167,15 +177,16 @@
             //     }
             // },
             {
-                data: 'foto_produk',
-                name: 'foto_produk',
-                render: function(data, type, row) {
-                    if (data) {
-                        return '<img src="{{ asset('storage/') }}/' + data + '" width="100">';
-                    }
-                    return '';
-                }
-            },
+        data: 'foto_produk',
+        name: 'foto_produk',
+        render: function(data, type, row) {
+            if (data && data !== 'default.png') {
+                return '<img src="{{ asset('storage/') }}/' + data + '" width="100">';
+            } else {
+                return '<img src="{{ asset("images/default.png") }}" width="100" alt="Image Not Available">';
+            }
+        }
+    },
             // {
             //     data: 'updatedby',
             //     name: 'updatedby',
