@@ -60,7 +60,7 @@
 }
 /* End Navbar */
 /* Footer Style */
-.footer-contact-container{
+.footer-contact-container {
     display: flex;
     justify-content: center;
     gap: 1em;
@@ -454,10 +454,10 @@
     flex-direction: column;
 }
 
-.catering-content-container {
+.active-menu {
     display: flex;
 }
-.cake-content-container {
+.inactive-menu {
     display: none;
 }
 
