@@ -102,7 +102,7 @@
 
         $('body').on('click', '.editData', function() {
             var id = $(this).data('id');
-            $.get("{{ route('admin.index') }}" + '/' + id + '/edit', function(data) {
+            $.get("{{ route('kategori.index') }}" + '/' + id + '/edit', function(data) {
                 $('.modal-title').text('Edit Data');
                 $('#modal-form').modal('show');
                 $('#id').val(data.id);

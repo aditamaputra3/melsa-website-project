@@ -86,24 +86,24 @@
                 <h1 class="text-center">Testimoni Beberapa Pelanggan</h1>
                 <h6 class="text-center">Melsa Catering & Melsa Kue</h6>
             </div>
-            <div class="home-testimoni-card-container d-flex justify-content-between flex-wrap p-2">
+            <div class="home-testimoni-card-container p-2">
                 <div class="home-testimoni-card">
-                    <p class="testimoni mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    <p class="testimoni mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.
                         It has survived not only five centuries, but also the leap into electronic typesetting.</p>
-                    <p class="testimoni-sender">Shyandis</p>
+                    <p class="testimoni-sender mt-2">Shyandis</p>
                 </div>
                 <div class="home-testimoni-card">
-                    <p class="testimoni mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    <p class="testimoni mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.
                         It has survived not only five centuries, but also the leap into electronic typesetting.</p>
-                    <p class="testimoni-sender">Shyandis</p>
+                    <p class="testimoni-sender mt-2">Shyandis</p>
                 </div>
                 <div class="home-testimoni-card">
-                    <p class="testimoni mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    <p class="testimoni mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.
                         It has survived not only five centuries, but also the leap into electronic typesetting.</p>
-                    <p class="testimoni-sender">Shyandis</p>
+                    <p class="testimoni-sender mt-2">Shyandis</p>
                 </div>
             </div>
         </div>

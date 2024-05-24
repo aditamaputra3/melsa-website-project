@@ -66,8 +66,7 @@
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h4 class="text mb-10 font-weight-bold">Kontak Kami</h4>
-                    <p><i class="fas fa-home mr-3"></i> Jalan Taman Srigunting nomor 5-6, Kecamatan Semarang Utara, Kota
-                        Semarang, Jawa Tengah
+                    <p><i class="fas fa-home mr-3"></i> {{$perusahaan->alamat ?? 'Alamat belum tersedia'}}
                     </p>
                     <div class="footer-contact-container">
                         <a class="text-decoration-none" href="https://wa.me/{{$perusahaan->no_telp ?? 'notavail'}}"><img src="/assets/img/icon/whatsapp.png" alt=""></a>
@@ -90,8 +89,8 @@
                 <div class="col-md-7 col-lg-8 text-center text-md-start">
                     <!-- Copyright -->
                     <div class="p-3">
-                        ©2024 Copyright
-                        <a class="text-white" href="https://mdbootstrap.com/">MelsaGroup.com</a>
+                        &copy; {{ now()->year }} Copyright
+                        <a class="text-white" href="{{ route('index') }}">Melsagroup</a>
                     </div>
                     <!-- Copyright -->
                 </div>
@@ -101,7 +100,7 @@
                 <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
                     <!-- Facebook -->
                     {{-- <a class="text-white">ABOUT US</a> --}}
-                    <td>"Makanan pilihan semua catering"</td>
+                    <td>{{$perusahaan->slogan ?? 'Makanan pilihan semua catering'}}</td>
                 </div>
                 <!-- Grid column -->
             </div>
