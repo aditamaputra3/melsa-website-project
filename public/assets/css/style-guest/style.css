@@ -606,6 +606,8 @@
 }
 .about-text {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     flex-grow: 0;
     flex-shrink: 0;
