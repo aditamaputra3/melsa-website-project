@@ -558,6 +558,10 @@
     padding: 1em 0.5em 2em 1em;
     width: 55em;
 }
+.detail-price{
+    color: var(--primary-2);
+    font-weight: bolder;
+}
 .contact-whatsapp {
     height: 3em;
     display: flex;
