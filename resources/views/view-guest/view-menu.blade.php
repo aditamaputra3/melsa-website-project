@@ -3,10 +3,17 @@
 @section('content')
     <div class="melsa-menu-container">
         <div class="title-menu-container">
-            <a class = "menu-title-active">Melsa Catering</a>
-            <div class="menu-title-separator">
-            </div>
-            <a class="menu-title-inactive">Melsa Kue</a>
+            @if (count($ProdukCatering) === 0 && count($ProdukKue) > 0)
+                <a class = "menu-title-catering menu-title-inactive">Melsa Catering</a>
+                <div class="menu-title-separator">
+                </div>
+                <a class="menu-title-kue menu-title-active">Melsa Kue</a>
+            @else
+                <a class ="menu-title-catering menu-title-active">Melsa Catering</a>
+                <div class="menu-title-separator">
+                </div>
+                <a class="menu-title-kue menu-title-inactive">Melsa Kue</a>
+            @endif
         </div>
         <div class="menu-controller-container mb-5">
             <div class="dropdown">
@@ -41,39 +48,56 @@
                 </span>
             </form>
         </div>
-        <div class="menu-content-container catering-content-container active-menu">
-            <div class="menu-container mb-5 p-2 catering-menu" id="cateringMenu">
-                @foreach ($ProdukCatering as $produk)
-                    <a class="menu-card" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
-                        <div class="menu-card-img ratio ratio-4x3">
-                            <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
-                        </div>
-                        <div class="menu-card-body">
-                            <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
-                            <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
-                            <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}
-                            </h5>
-                        </div>
-                    </a>
-                @endforeach
+        @if (count($ProdukCatering) === 0 && count($ProdukKue) > 0)
+            <div class="menu-content-container catering-content-container inactive-menu">
+                <div class="menu-container mb-5 p-2 catering-menu" id="cateringMenu">
+                    <div class="p-5">
+                        <H1 class="my-5">NOT FOUND</H1>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="menu-content-container cake-content-container inactive-menu">
-            <div class="menu-container mb-5 p-2 cake-menu">
-                @foreach ($ProdukKue as $produk)
-                    <a class="menu-card" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
-                        <div class="menu-card-img ratio ratio-4x3">
-                            <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
-                        </div>
-                        <div class="menu-card-body">
-                            <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
-                            <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
-                            <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}
-                            </h5>
-                        </div>
-                    </a>
-                @endforeach
+            <div class="menu-content-container cake-content-container active-menu">
+                <div class="menu-container mb-5 p-2 cake-menu">
+                    @foreach ($ProdukKue as $produk)
+                        <a class="menu-card" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
+                            <div class="menu-card-img ratio ratio-4x3">
+                                <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                            </div>
+                            <div class="menu-card-body">
+                                <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
+                                <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
+                                <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}
+                                </h5>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
             </div>
-        </div>
+        @elseif(count($ProdukCatering) > 0 && count($ProdukKue) === 0)
+            <div class="menu-content-container catering-content-container active-menu">
+                <div class="menu-container mb-5 p-2 catering-menu" id="cateringMenu">
+                    @foreach ($ProdukCatering as $produk)
+                        <a class="menu-card" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
+                            <div class="menu-card-img ratio ratio-4x3">
+                                <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                            </div>
+                            <div class="menu-card-body">
+                                <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
+                                <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
+                                <h5 class="menu-price fw-bold">Rp {{ number_format($produk->harga_produk, 0, ',', '.') }}
+                                </h5>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+            <div class="menu-content-container cake-content-container inactive-menu">
+                <div class="menu-container mb-5 p-2 cake-menu">
+                    <div class="p-5">
+                        <H1 class="my-5">NOT FOUND</H1>
+                    </div>
+                </div>
+            </div>
+        @endif
     </div>
 @endsection
