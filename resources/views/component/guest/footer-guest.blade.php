@@ -25,16 +25,16 @@
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h4 class="text mb-10 font-weight-bold">Catering</h4>
                     <p>
-                        <a class="text-white">Snack Box</a>
+                        <a class="text-white" href="/menu?kategori=Snack Box">Snack Box</a>
                     </p>
                     <p>
-                        <a class="text-white">Nasi Box</a>
+                        <a class="text-white" href="/menu?kategori=Nasi Box">Nasi Box</a>
                     </p>
                     <p>
-                        <a class="text-white">Prasmanan</a>
+                        <a class="text-white" href="/menu?kategori=Prasmanan">Prasmanan</a>
                     </p>
                     <p>
-                        <a class="text-white">Catering Service</a>
+                        <a class="text-white" href="/menu?kategori=Catering Service">Catering Service</a>
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -47,16 +47,16 @@
                         Kue
                     </h4>
                     <p>
-                        <a class="text-white">Dessert</a>
+                        <a class="text-white" href="/menu?kategori=Dessert">Dessert</a>
                     </p>
                     <p>
-                        <a class="text-white">Cookies</a>
+                        <a class="text-white" href="/menu?kategori=Cookies">Cookies</a>
                     </p>
                     <p>
-                        <a class="text-white">Cake Birthday</a>
+                        <a class="text-white" href="/menu?kategori=Cake Birthday">Cake Birthday</a>
                     </p>
                     <p>
-                        <a class="text-white">Bakery</a>
+                        <a class="text-white" href="/menu?kategori=Bakery">Bakery</a>
                     </p>
                 </div>
 
@@ -66,12 +66,18 @@
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h4 class="text mb-10 font-weight-bold">Kontak Kami</h4>
-                    <p><i class="fas fa-home mr-3"></i> {{$perusahaan->alamat ?? 'Alamat belum tersedia'}}
+                    <p><i class="fas fa-home mr-3"></i> {{ $perusahaan->alamat ?? 'Alamat belum tersedia' }}
                     </p>
                     <div class="footer-contact-container">
-                        <a class="text-decoration-none" href="https://wa.me/{{$perusahaan->no_telp ?? 'notavail'}}"><img src="/assets/img/icon/whatsapp.png" alt=""></a>
-                        <a class="text-decoration-none" href="https://www.instagram.com/{{$perusahaan->instagram ?? 'notavail'}}"><img src="/assets/img/icon/instagram.png" alt=""></a>
-                        <a class="text-decoration-none" href="https://www.tiktok.com/{{$perusahaan->tiktok ?? 'notavail'}}"><img src="/assets/img/icon/tiktok.png" alt=""></a>
+                        <a class="text-decoration-none"
+                            href="https://wa.me/{{ $perusahaan->no_telp ?? 'notavail' }}"><img
+                                src="/assets/img/icon/whatsapp.png" alt=""></a>
+                        <a class="text-decoration-none"
+                            href="https://www.instagram.com/{{ $perusahaan->instagram ?? 'notavail' }}"><img
+                                src="/assets/img/icon/instagram.png" alt=""></a>
+                        <a class="text-decoration-none"
+                            href="https://www.tiktok.com/{{ $perusahaan->tiktok ?? 'notavail' }}"><img
+                                src="/assets/img/icon/tiktok.png" alt=""></a>
                     </div>
                 </div>
                 <!-- Grid column -->
@@ -100,7 +106,7 @@
                 <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
                     <!-- Facebook -->
                     {{-- <a class="text-white">ABOUT US</a> --}}
-                    <td>{{$perusahaan->slogan ?? 'Makanan pilihan semua catering'}}</td>
+                    <td>{{ $perusahaan->slogan ?? 'Makanan pilihan semua catering' }}</td>
                 </div>
                 <!-- Grid column -->
             </div>

@@ -4,7 +4,7 @@
     <div class="about-container">
         <div class="hero-about">
             <div class="about-text">
-                <h1>Melsa Catering & Melsa Kue</h1>
+                <img src="/assets/img/guest/about/melsa-logo.png" alt="Logo Melsa" class="about-image">
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
                     Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
                     Hampden-Sydney College in Virginia. </p>
@@ -13,7 +13,7 @@
                 <img src="/assets/img/guest/about/hero-img.png" alt="">
             </div>
         </div>
-        <div class="how-to-order">
+        <div class="how-to-order px-3">
             <div class="how-to-image">
                 <img src="/assets/img/guest/about/how-to-img.png" alt="">
             </div>

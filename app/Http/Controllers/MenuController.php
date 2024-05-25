@@ -15,7 +15,12 @@ class MenuController extends Controller
 {
     public function index($id = null)
     {
-        if (isset($_GET['priceAsc'])) {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $ProdukKue = Produk::where('id_kategori', $id)->where('jenis_produk', 'kue')->get();
+            $ProdukCatering = Produk::where('id_kategori', $id)->where('jenis_produk', 'catering')->get();
+            $Kategori = Kategori::all();
+        } elseif (isset($_GET['priceAsc'])) {
             $ProdukKue = Produk::where('jenis_produk', 'kue')->orderBy('harga_produk', 'ASC')->get();
             $ProdukCatering = Produk::where('jenis_produk', 'catering')->orderBy('harga_produk', 'ASC')->get();
             $Kategori = Kategori::all();
@@ -38,15 +43,20 @@ class MenuController extends Controller
                 $ProdukCatering = Produk::where('jenis_produk', 'catering')->get();
                 $Kategori = Kategori::all();
             }
+        } elseif (isset($_GET['kategori'])) {
+            if ($_GET['kategori'] != null) {
+                $search = $_GET['kategori'];
+                $ProdukKue = Produk::where('jenis_produk', 'kue')->where('nama_produk', 'LIKE', "%{$search}%")->orwhere('harga_produk', 'LIKE', "%{$search}%")->get();
+                $ProdukCatering = Produk::where('jenis_produk', 'catering')->where('nama_produk', 'LIKE', "%{$search}%")->orwhere('harga_produk', 'LIKE', "%{$search}%")->get();
+                $Kategori = Kategori::all();
+            } else {
+                $ProdukKue = Produk::where('jenis_produk', 'kue')->get();
+                $ProdukCatering = Produk::where('jenis_produk', 'catering')->get();
+                $Kategori = Kategori::all();
+            }
         } else {
             $ProdukKue = Produk::where('jenis_produk', 'kue')->get();
             $ProdukCatering = Produk::where('jenis_produk', 'catering')->get();
-            $Kategori = Kategori::all();
-        }
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            $ProdukKue = Produk::where('id_kategori', $id)->where('jenis_produk', 'kue')->get();
-            $ProdukCatering = Produk::where('id_kategori', $id)->where('jenis_produk', 'catering')->get();
             $Kategori = Kategori::all();
         }
 
