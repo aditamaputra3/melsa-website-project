@@ -27,10 +27,10 @@
             <div class="home-menu-list home-menu-catering p-2">
                 <?php $count = 0; ?>
                 @foreach ($ProdukCatering as $produk)
-                    <?php if ($count == 3) {
+                    <?php if ($count == 6) {
                         break;
                     } ?>
-                    <a class="home-menu-card m-2">
+                    <a class="home-menu-card m-2" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
                         <div class="home-card-img">
                             <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="">
                         </div>
@@ -45,10 +45,10 @@
             <div class="home-menu-list home-menu-cake p-2">
                 <?php $count = 0; ?>
                 @foreach ($ProdukKue as $produk)
-                    <?php if ($count == 3) {
+                    <?php if ($count == 6) {
                         break;
                     } ?>
-                    <a class="home-menu-card m-2">
+                    <a class="home-menu-card m-2" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
                         <div class="home-card-img">
                             <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="">
                         </div>

@@ -42,8 +42,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 window.addEventListener("DOMContentLoaded", (event) => {
-    const menuCatering = document.querySelector(".menu-title-active");
-    const menuCake = document.querySelector(".menu-title-inactive");
+    const menuCatering = document.querySelector(".menu-title-catering");
+    const menuCake = document.querySelector(".menu-title-kue");
     const contentCatering = document.querySelector(
         ".catering-content-container"
     );
