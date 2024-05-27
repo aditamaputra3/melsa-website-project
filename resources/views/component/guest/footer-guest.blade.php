@@ -96,7 +96,7 @@
                     <!-- Copyright -->
                     <div class="p-3">
                         &copy; {{ now()->year }} Copyright
-                        <a class="text-white" href="{{ route('index') }}">Melsagroup</a>
+                        <a class="text-white" href="{{ route('index') }}">Sistem Informasi ITENAS</a>
                     </div>
                     <!-- Copyright -->
                 </div>

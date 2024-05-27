@@ -32,9 +32,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="harga_produk">Harga Produk</label>
-                                    <input type="number" name="harga_produk" id="harga_produk" class="form-control">
-                                    <span class="text-danger" id="error-harga_produk"></span>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">     
+                                        <span class="input-group-text">Rp.</span>
+                                        </div>
+                                        <input type="number" name="harga_produk" id="harga_produk" class="form-control" min="0">
+                                        <span class="text-danger" id="error-harga_produk"></span>
+                                        </div>
                                 </div>
+
+                                
                                 <div class="form-group">
                                     <label for="deskripsi_produk">Deskripsi Produk</label>
                                     <textarea name="deskripsi_produk" id="deskripsi_produk" class="form-control"></textarea>
@@ -177,16 +184,16 @@
             //     }
             // },
             {
-        data: 'foto_produk',
-        name: 'foto_produk',
-        render: function(data, type, row) {
-            if (data && data !== 'default.png') {
-                return '<img src="{{ asset('storage/') }}/' + data + '" width="100">';
-            } else {
-                return '<img src="{{ asset("images/default.png") }}" width="100" alt="Image Not Available">';
-            }
-        }
-    },
+                data: 'foto_produk',
+                name: 'foto_produk',
+                render: function(data, type, row) {
+                    if (data && data !== 'default.png') {
+                        return '<img src="{{ asset('storage/') }}/' + data + '" width="100">';
+                    } else {
+                        return '<img src="{{ asset('images/default.png') }}" width="100" alt="Image Not Available">';
+                    }
+                }
+            },
             // {
             //     data: 'updatedby',
             //     name: 'updatedby',
@@ -200,6 +207,31 @@
         ];
 
         let table = initializeDataTables(routeUrl, columns);
+        
+        // var rupiah = document.getElementById('harga_produk');
+		// rupiah.addEventListener('keyup', function(e){
+		// 	// tambahkan 'Rp.' pada saat form di ketik
+		// 	// gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+		// 	rupiah.value = formatRupiah(this.value);
+		// });
+ 
+		// /* Fungsi formatRupiah */
+		// function formatRupiah(angka, prefix){
+		// 	var number_string = angka.replace(/[^,\d]/g, '').toString(),
+		// 	split   		= number_string.split(','),
+		// 	sisa     		= split[0].length % 3,
+		// 	rupiah     		= split[0].substr(0, sisa),
+		// 	ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+ 
+		// 	// tambahkan titik jika yang di input sudah menjadi angka ribuan
+		// 	if(ribuan){
+		// 		separator = sisa ? '.' : '';
+		// 		rupiah += separator + ribuan.join('.');
+		// 	}
+ 
+		// 	rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+		// 	return prefix == undefined ? rupiah : (rupiah ? + rupiah : '');
+		// }
 
         $(".resitdc-image-choose .resitdc-image-choose-input").change(function() {
             const file = this.files[0];
