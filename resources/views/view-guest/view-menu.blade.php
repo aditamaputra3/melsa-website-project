@@ -62,8 +62,13 @@
                     @foreach ($ProdukKue as $produk)
                         <a class="menu-card" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
                             <div class="menu-card-img ratio ratio-4x3">
-                                <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                                @if ($produk->foto_produk == 'default.png')
+                                    <img src="{{ asset('images/default.png') }}" alt="{{ $produk->nama_produk }}">
+                                @else
+                                    <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                                @endif
                             </div>
+                            
                             <div class="menu-card-body">
                                 <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
                                 <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>
@@ -120,9 +125,13 @@
                     @foreach ($ProdukCatering as $produk)
                         <a class="menu-card" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
                             <div class="menu-card-img ratio ratio-4x3">
-                                <img src="{{ asset('storage/' . $produk->foto_produk) }}"
-                                    alt="{{ $produk->nama_produk }}">
+                                @if ($produk->foto_produk == 'default.png')
+                                    <img src="{{ asset('images/default.png') }}" alt="{{ $produk->nama_produk }}">
+                                @else
+                                    <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                                @endif
                             </div>
+                            
                             <div class="menu-card-body">
                                 <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
                                 <p class="menu-desc">{{ $produk->deskripsi_produk }}</p>

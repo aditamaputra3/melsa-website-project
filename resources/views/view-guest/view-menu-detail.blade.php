@@ -4,7 +4,11 @@
     <div class="detail-container">
         <div class="detail-content">
             <div class="detail-img">
-                <img src="{{ asset('storage/' . $data->foto_produk) }}" alt="{{ $data->nama_produk }}">
+                @if ($data->foto_produk == 'default.png')
+                    <img src="{{ asset('images/default.png') }}" alt="{{ $data->nama_produk }}">
+                @else
+                    <img src="{{ asset('storage/' . $data->foto_produk) }}" alt="{{ $data->nama_produk }}">
+                @endif
             </div>
             <div class="detail-product">
                 <p class="detail-path">Menu / Katalog Catering / Produk / {{ $data->nama_produk }}</p>
@@ -13,13 +17,13 @@
                 <p class="detail-desc">{{ $data->deskripsi_produk }}</p>
                 <div class="order-contact">
                     <p class="fw-bold">Untuk pemesanan hubungi nomor whatsapp di bawah : </p>
-                        <a href="https://wa.me/{{ $perusahaan->no_telp ?? 'notavail' }}" 
-                            style="display: inline-block; padding: 10px 20px; background-color: rgb(37 211 102); color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold;" 
-                            class="contact-whatsapp">
-                            <span class="material-symbols-outlined" style="vertical-align: middle; margin-right: 5px;">
-                                call
-                            </span>
-                            +{{ $perusahaan->no_telp ?? 'Nomor Belum Tersedia' }}
+                    <a href="https://wa.me/{{ $perusahaan->no_telp ?? 'notavail' }}"
+                        style="display: inline-block; padding: 10px 20px; background-color: rgb(37 211 102); color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold;"
+                        class="contact-whatsapp">
+                        <span class="material-symbols-outlined" style="vertical-align: middle; margin-right: 5px;">
+                            call
+                        </span>
+                        +{{ $perusahaan->no_telp ?? 'Nomor Belum Tersedia' }}
 
                     </a>
                 </div>
@@ -39,7 +43,19 @@
                     } ?>
                     <a class="menu-card" href="{{ route('detail-produk', ['id' => $produk->id]) }}">
                         <div class="menu-card-img ratio ratio-4x3">
-                            <img src="{{ asset('storage/' . $produk->foto_produk) }}" alt="{{ $produk->nama_produk }}">
+                            @php
+                                $imageSource = '';
+                                $imageAlt = $produk->nama_produk;
+                                $imageData = $produk->foto_produk;
+
+                                if ($imageData && $imageData !== 'default.png') {
+                                    $imageSource = asset('storage/' . $imageData);
+                                } else {
+                                    $imageSource = asset('images/default.png');
+                                    $imageAlt = 'Image Not Available';
+                                }
+                            @endphp
+                            <img src="{{ $imageSource }}" alt="{{ $imageAlt }}" width="100">
                         </div>
                         <div class="menu-card-body">
                             <h5 class="menu-title fw-bold">{{ $produk->nama_produk }}</h5>
