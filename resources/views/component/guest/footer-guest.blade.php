@@ -9,12 +9,13 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h4 class="text mb-10 font-weight-bold">
-                        Melsa Group
+                        Melsa Kue
                     </h4>
                     <p>
-                        Lorem ipsum is a placeholder text commonly used in
-                        publishing and graphic design to demonstrate the visual
-                        form of a document or
+                        Destinasi utama untuk pencinta kue dan hidangan lezat lainnya! Kami menyajikan
+                        beragam dessert, kue jajanan pasar, roti kekinian, snack box, layanan catering nasi box dan
+                        prasmanan dengan
+                        cita rasa yang tak tertandingi.
                     </p>
                 </div>
                 <!-- Grid column -->

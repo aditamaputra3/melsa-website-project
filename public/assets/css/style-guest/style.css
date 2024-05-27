@@ -615,10 +615,13 @@
     text-align: center;
     width: 55%;
     padding: auto;
-    margin-bottom: 3.5em;
+    margin-bottom: 1em;
 }
 .about-image {
     width: fit-content;
+}
+.about-txt{
+    font-size: larger;
 }
 .about-image img {
     width: 100%;
