@@ -44,7 +44,7 @@
             </div>
             <form class="input-group search-container" action="/menu" method="GET">
                 <input class="form-search form-control fst-italic" type="search" aria-describedby="search-form"
-                    placeholder="Ketik nama produk yang anda cari..." id="search" name="search">
+                    placeholder="Nama produk atau harga" id="search" name="search">
                 <span><button class="input-group-text btn-search" type="submit" id="search-form">Cari</button>
                 </span>
             </form>
@@ -53,7 +53,7 @@
             <div class="menu-content-container catering-content-container inactive-menu">
                 <div class="menu-container mb-5 p-2 catering-menu" id="cateringMenu">
                     <div class="p-5">
-                        <H1 class="my-5">NOT FOUND</H1>
+                        <H1 class="my-5">Produk tidak ditemukan</H1>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
             <div class="menu-content-container cake-content-container inactive-menu">
                 <div class="menu-container mb-5 p-2 cake-menu">
                     <div class="p-5">
-                        <H1 class="my-5">NOT FOUND</H1>
+                        <H1 class="my-5">Produk tidak ditemukan</H1>
                     </div>
                 </div>
             </div>
@@ -108,14 +108,14 @@
             <div class="menu-content-container cake-content-container active-menu">
                 <div class="menu-container mb-5 p-2 cake-menu">
                     <div class="p-5">
-                        <H1 class="my-5">NOT FOUND</H1>
+                        <H1 class="my-5">Produk tidak ditemukan</H1>
                     </div>
                 </div>
             </div>
             <div class="menu-content-container catering-content-container inactive-menu">
                 <div class="menu-container mb-5 p-2 catering-menu" id="cateringMenu">
                     <div class="p-5">
-                        <H1 class="my-5">NOT FOUND</H1>
+                        <H1 class="my-5">Produk tidak ditemukan</H1>
                     </div>
                 </div>
             </div>
