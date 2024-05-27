@@ -5,9 +5,10 @@
         <div class="hero-about">
             <div class="about-text">
                 <img src="/assets/img/guest/about/melsa-logo.png" alt="Logo Melsa" class="about-image">
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                    Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                    Hampden-Sydney College in Virginia. </p>
+                <p class="about-txt">Melsa Kue,destinasi utama untuk pencinta kue dan hidangan lezat lainnya! Kami menyajikan
+                    beragam dessert, kue jajanan pasar, roti kekinian, snack box, layanan catering nasi box dan prasmanan
+                    dengan
+                    cita rasa yang tak tertandingi.</p>
             </div>
             <div class="about-image">
                 <img src="/assets/img/guest/about/hero-img.png" alt="">
@@ -20,10 +21,10 @@
             <div class="how-to-text-section">
                 <h2>Cara Pemesanan Produk Melsa Group :</h2>
                 <div class="how-to-text-container">
-                    <p class="how-to-text">1. Contrary to popular belief, Lorem Ipsum is not simply
-                        <br>2. Random text. It has roots in a piece of classical Latin literature from 45 BC,
-                        <br>3. Making it over 2000 years old. Richard McClintock,
-                        <br>4. Making it over 2000 years old. Richard McClintock,
+                    <p class="how-to-text">1. Melalui whatsapp dan diambil langsung
+                        <br>2. Melalui aplikasi Grabfood
+                        <br>3. Mengunjungi toko offline kami
+                        <br>4. Pengiriman langsung oleh Melsa(Khusus Pesanan Banyak)
                     </p>
                 </div>
             </div>
