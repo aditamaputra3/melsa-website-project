@@ -96,8 +96,9 @@
                     <h5 class="testimoni-sender mt-2">@fdlhjbdh_</h5>
                 </div>
                 <div class="home-testimoni-card">
-                    <p class="testimoni mb-5">Tiada rasa yang lebih indah dari rasa cake melsa, seakan dunia milik beruda~~
-                        kebanggaan sejak dulu minimelss jgn kemana mana yaa!!💓💓💓💓</p>
+                    <p class="testimoni mb-5">Tiada rasa yang lebih indah dari rasa cake melsa, seakan dunia milik berdua~~
+                        kebanggaan sejak dulu minimelss jgn kemana mana yaa!!💓💓💓💓 apalagi millecrepe redvelvetnyaa 💓
+                    </p>
                     <h5 class="testimoni-sender mt-2">@hydalsya</h5>
                 </div>
             </div>
