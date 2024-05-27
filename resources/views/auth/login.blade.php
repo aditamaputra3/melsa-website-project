@@ -20,11 +20,12 @@
 
     <style>
         /* Ubah warna border */
-.card.card-outline.card-warning {
-    border-color: #D90802; /* Warna kuning */
-}
+        .card.card-outline.card-warning {
+            border-color: #D90802;
+            /* Warna kuning */
+        }
 
-.melsared1 {
+        .melsared1 {
             background-color: #D90802 !important;
             color: #FFFFFF !important;
         }
@@ -37,7 +38,8 @@
         <div class="card card-outline card-warning">
             <div class="card-header text-center">
                 <a href="{{ route('index') }}">
-                    <img src="{{ asset('/assets/melsalogo2.png') }}" alt="Melsagroup" class="img-fluid" style="max-height: 50px;">
+                    <img src="{{ asset('/assets/melsalogo2.png') }}" alt="Melsagroup" class="img-fluid"
+                        style="max-height: 50px;">
                 </a>
             </div>
             <div class="card-body">
@@ -150,7 +152,7 @@
             // Menampilkan toast SweetAlert sukses
             Swal.fire({
                 icon: 'success',
-                title: '{{ session("success") }}',
+                title: '{{ session('success') }}',
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,

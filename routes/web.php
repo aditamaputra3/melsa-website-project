@@ -44,24 +44,13 @@ Route::get('/login', function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 //route dibawah harus auth dulu buat masuk ke route tersebut
 Route::group(['middleware' => ['auth']], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::resource('admin', DataAdminController::class);
+    // Route::resource('admin', DataAdminController::class);
 
     Route::resource('kategori', KategoriController::class);
 
@@ -72,4 +61,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/perusahaan', [PerusahaanController::class, 'index'])->name('perusahaan.index');
     Route::put('/perusahaan', [PerusahaanController::class, 'update'])->name('perusahaan.update');
+
+    Route::get('/admin', [DataAdminController::class, 'index'])->name('admin.index');
+    Route::put('/admin', [DataAdminController::class, 'update'])->name('admin.update');
 });

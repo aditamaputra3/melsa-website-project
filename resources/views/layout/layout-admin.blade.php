@@ -62,7 +62,7 @@
             // Menampilkan toast SweetAlert sukses
             Swal.fire({
                 icon: 'success',
-                title: '{{ session('success') }}, {{ auth()->user()->nama_lengkap }}',
+                title: '{{ session('success') }}, {{ auth()->user()->nama_admin }}',
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,

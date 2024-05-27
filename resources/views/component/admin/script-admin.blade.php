@@ -77,7 +77,8 @@
     var currentUrl = window.location.href;
     var excludedUrls = [
         '/perusahaan', // Route::get('/perusahaan', [PerusahaanController::class, 'index'])->name('perusahaan.index');
-        '/perusahaan'
+        '/perusahaan',
+        '/admin'
         // '/produk/kue',
         // '/produk/catering' // Route::put('/perusahaan', [PerusahaanController::class, 'update'])->name('perusahaan.update');
     ];
