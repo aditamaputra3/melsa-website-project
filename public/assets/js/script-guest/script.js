@@ -63,3 +63,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 });
+window.addEventListener("DOMContentLoaded", (event) => {
+    document
+        .querySelector(".floating-button")
+        .addEventListener("mouseover", function () {
+            document.querySelector(".floating-title").style.display = "none";
+        });
+
+    document
+        .querySelector(".floating-button")
+        .addEventListener("mouseover", function () {
+            document.querySelector(".floating-title").style.display = "block";
+        });
+});
