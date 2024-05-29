@@ -93,7 +93,7 @@
         <section class="p-3 pt-0">
             <div class="row d-flex align-items-center">
                 <!-- Grid column -->
-                <div class="col-md-7 col-lg-8 text-center text-md-start">
+                <div class="col-md-4 col-lg-4 text-md-start">
                     <!-- Copyright -->
                     <div class="p-3">
                         &copy; {{ now()->year }} Copyright
@@ -102,9 +102,11 @@
                     <!-- Copyright -->
                 </div>
                 <!-- Grid column -->
-
+                <div class="col-md-4 col-lg-4 text-md-center">
+                    <img src="/assets/img/guest/about/melsa-logo.png" alt="Logo Melsa" class="logo-image">
+                </div>
                 <!-- Grid column -->
-                <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                <div class="col-md-4 col-lg-4 ml-lg-0 text-md-end">
                     <!-- Facebook -->
                     {{-- <a class="text-white">ABOUT US</a> --}}
                     <td>{{ $perusahaan->slogan ?? 'Makanan pilihan semua catering' }}</td>

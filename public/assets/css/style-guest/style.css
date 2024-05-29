@@ -14,7 +14,6 @@
     align-items: center;
     z-index: 1;
 }
-
 .navbar-menu {
     position: relative;
     font-size: 1.15rem;
@@ -46,6 +45,14 @@
         color: var(--neutral-2);
     }
 }
+.navbar-logo{
+    position: absolute;
+    top: 1.5px;
+    right: 25px;
+}
+.logo-navbar{
+    height: 3.5em;
+}
 .icons {
     /* position: absolute; */
     margin: 0px;
@@ -62,8 +69,11 @@
 /* Footer Style */
 .footer-contact-container {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     gap: 1em;
+}
+.logo-image{
+    height: 4em;
 }
 /* End Footer Style */
 /* Home Style */
@@ -170,23 +180,23 @@
 
 .home-card-img img {
     border-radius: 8px 8px 0 0;
-        width: 100%;
-        height: 18rem;
-        object-fit: fill;
-        border-bottom: solid 1px #dcdcdc;
+    width: 100%;
+    height: 18rem;
+    object-fit: fill;
+    border-bottom: solid 1px #dcdcdc;
 }
 
 .home-menu-card-body {
     padding: 1rem 1.5rem;
     height: 8em;
 }
-.home-menu-title{
+.home-menu-title {
     height: 1.5em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.home-menu-desc{
+.home-menu-desc {
     height: 3em;
     white-space: wrap;
     overflow: hidden;
@@ -211,7 +221,7 @@
     height: 11em;
     margin-bottom: 1.5rem;
 }
-.home-testimoni-card-container{
+.home-testimoni-card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -272,15 +282,30 @@
 
 /* Floating Link */
 .floating-container {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
     position: fixed;
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 200px;
     bottom: 0;
     right: 0;
     margin: 35px 25px;
 }
 .floating-container:hover {
     height: 13em;
+}
+.floating-title {
+    /* background-color: var(--primary-1); */
+    font-weight: bolder;
+    color: var(--neutral-1);
+    text-align: center;
+    position: fixed;
+    bottom: 6.5em;
+    right: 1.65em;
+    padding: 5px;
+    border-radius: 40px;
+    display: block;
 }
 .floating-container:hover .floating-button {
     box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
@@ -300,6 +325,11 @@
 .floating-container:hover .element-container .float-element:nth-child(3) {
     -webkit-animation: come-in 0.4s forwards 0.6s;
     animation: come-in 0.4s forwards 0.6s;
+}
+.floating-button span{
+    margin-top: 0.8em;
+    margin-left: 0.05em;
+    font-size: x-large;
 }
 .floating-container .floating-button {
     position: absolute;
@@ -514,14 +544,14 @@
     padding: 1em 2em 0 2em;
 }
 
-.menu-title{
+.menu-title {
     height: 1.5em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.menu-desc{
+.menu-desc {
     height: 3em;
     white-space: wrap;
     overflow: hidden;
@@ -558,7 +588,7 @@
     padding: 1em 0.5em 2em 1em;
     width: 55em;
 }
-.detail-price{
+.detail-price {
     color: var(--primary-2);
     font-weight: bolder;
 }
@@ -620,7 +650,7 @@
 .about-image {
     width: fit-content;
 }
-.about-txt{
+.about-txt {
     font-size: larger;
 }
 .about-image img {
@@ -664,7 +694,9 @@
         display: flex;
         justify-content: end;
     }
-
+    .navbar-logo{
+        display: none;
+    }
     .icons {
         display: inline-flex;
     }
