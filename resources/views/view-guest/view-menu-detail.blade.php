@@ -17,7 +17,7 @@
                 <p class="detail-desc">{{ $data->deskripsi_produk }}</p>
                 <div class="order-contact">
                     <p class="fw-bold">Untuk pemesanan hubungi nomor whatsapp di bawah : </p>
-                    <a href="https://wa.me/{{ $perusahaan->no_telp ?? 'notavail' }}"
+                    <a href="https://wa.me/{{ $perusahaan->no_telp ?? 'notavail' }}?text=Halo melsa, Saya mau pesan" class="" title="Whatsapp">
                         style="display: inline-block; padding: 10px 20px; background-color: rgb(37 211 102); color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold;"
                         class="contact-whatsapp">
                         <span class="material-symbols-outlined" style="vertical-align: middle; margin-right: 5px;">
