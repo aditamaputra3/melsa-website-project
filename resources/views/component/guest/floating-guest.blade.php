@@ -5,7 +5,7 @@
             </span></div>
         <div class="element-container">
             <span class="float-element">
-                <a href="https://wa.me/{{ $perusahaan->no_telp ?? 'notavail' }}" class="" title="Whatsapp">
+                <a href="https://wa.me/{{ $perusahaan->no_telp ?? 'notavail' }}?text=Halo melsa, Saya mau pesan" class="" title="Whatsapp">
                     <span class="material-symbols-outlined material-icons">
                         call
                     </span></a>
