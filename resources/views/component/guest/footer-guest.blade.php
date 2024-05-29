@@ -69,7 +69,7 @@
                     <h4 class="text mb-10 font-weight-bold">Kontak Kami</h4>
                     <p><i class="fas fa-home mr-3"></i> {{ $perusahaan->alamat ?? 'Alamat belum tersedia' }}
                     </p>
-                    <div class="footer-contact-container">
+                    <div class="text mb-10 footer-contact-container">
                         <a class="text-decoration-none"
                             href="https://wa.me/{{ $perusahaan->no_telp ?? 'notavail' }}"><img
                                 src="/assets/img/icon/whatsapp.png" alt=""></a>
