@@ -240,20 +240,24 @@
                 processData: false,
                 contentType: false,
                 dataType: 'json',
-                success: function(response) {
+                success: function(data) {
                     $('#modal-form').modal('hide');
                     $('.table').DataTable().draw();
                     if (data.success) {
-                            showSuccessToast(data
-                            .success); // Gunakan response JSON sebagai judul toast
-                        }
+                                showSuccessToast(data
+                                .success); // Gunakan response JSON sebagai judul toast
+                            }
                 },
-                error: function(response) {
-                    var errors = $.parseJSON(response.responseText);
-                    $('span[id^="error"]').text('');
-                    $.each(errors.messages, function(key, value) {
-                        $('#error-' + key).text(value);
-                    });
+                error: function(data) {
+                    console.log('Error:', data);
+                        $('#saveBtn').html('Save Changes');
+                        // Tampilkan pesan 'error' dari response JSON jika ada
+                        if (data.error) {
+                            showErrorToast(data.error);
+                        } else {
+                            // Tampilkan pesan error kustom jika tidak ada pesan error dalam response JSON
+                            showErrorToast('An error occurred.');
+                        }
                 }
             });
         });

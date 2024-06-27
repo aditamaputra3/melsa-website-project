@@ -297,5 +297,6 @@
 
             return formIsValid;
         }
+        
     </script>
 @endsection
