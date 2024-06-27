@@ -31,6 +31,10 @@ Route::get('/menu/{id}', [MenuController::class, 'getDetail'])->name('detail-pro
 Route::get("/about", function () {
     return view('view-guest.view-about');
 });
+Route::get("/tim-pengembang", function () {
+    return view('view-guest.view-development-team');
+});
+
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/login', function () {

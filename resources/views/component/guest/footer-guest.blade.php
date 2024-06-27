@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start text-white" style="background-color: #D90802">
+<footer class="text-center text-lg-start text-white custom-footer" style="background-color: #D90802">
     <!-- Grid container -->
     <div class="container p-3 pb-0">
         <!-- Section: Links -->
@@ -97,7 +97,7 @@
                     <!-- Copyright -->
                     <div class="p-3">
                         &copy; {{ now()->year }} Copyright
-                        <a class="text-white" href="{{ route('index') }}">Sistem Informasi ITENAS</a>
+                        <a class="text-white" href="/tim-pengembang" target="_blank">Sistem Informasi ITENAS</a>
                     </div>
                     <!-- Copyright -->
                 </div>
